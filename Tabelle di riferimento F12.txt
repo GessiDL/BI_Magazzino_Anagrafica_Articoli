@@ -1,0 +1,11 @@
+Tabelle F12 per interrogazione magazzino
+
+--select * from art --tabella anagrafica articoli
+	--where a_scorta_minima --scorta minima fissata
+--select * from mcau --movimenti contabili (per definire il tipo di movimento)
+	--where c_tipo --tipo movimento (ingresso/uscita) per calcolare giacenza
+--select * from mmov --movimenti magazzino
+	--where m_caus_mov -- causale movimento(vedi movimenti contabili)
+--select * from ard --giacenze articolo
+	--where b_scorta_min --scorta minima (uguale a a_scorta_minima?)
+--select * from sad --tabella ultimo inventario
