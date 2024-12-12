@@ -202,6 +202,19 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 3169,
+            "y": 217.75
+          },
+          "nodeIndex": "Listini vendita (liav)",
+          "nodeLineageTag": "4d390e82-a0ae-4ef6-9c64-3d00393a35ea",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Tutte le tabelle",

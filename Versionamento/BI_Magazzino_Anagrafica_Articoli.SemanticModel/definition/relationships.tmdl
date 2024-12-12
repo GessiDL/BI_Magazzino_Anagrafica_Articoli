@@ -32,3 +32,22 @@ relationship ecd1a56b-c614-27a2-ac96-9e069795fcdf
 	fromColumn: 'Vendite fatturate'.'Codice articolo'
 	toColumn: 'Anagrafica articoli'.'Codice Articolo'
 
+relationship a11e2c7c-eb5d-461a-8a10-3ff48be8757c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Listini vendita (liav)'.'Data entrata in vigore'
+	toColumn: LocalDateTable_b72a4a6c-3bc0-493a-856c-7d1c89c961d7.Date
+
+relationship b59513c3-83e7-4ca7-b494-12852803ac2c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Listini vendita (liav)'.'Data fine vigore'
+	toColumn: LocalDateTable_c18939e1-0c17-4cb6-aef4-e7817106196a.Date
+
+relationship ebc14423-3b78-4ee9-97eb-ea892251a3fa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Listini vendita (liav)'.'Data modifica'
+	toColumn: LocalDateTable_e4cc534b-9cf0-4dad-9972-1e2ef5b7d0e8.Date
+
+relationship AutoDetected_57300ba9-f46e-4476-9c0b-49cd3dcaf8ae
+	fromColumn: 'Listini vendita (liav)'.'Codice Articolo'
+	toColumn: 'Anagrafica articoli'.'Codice Articolo'
+
