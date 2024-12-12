@@ -23,6 +23,16 @@ table 'Listini vendita (liav)'
 		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
 		lineageTag: bc492566-e8cc-41d4-bdbf-bc5ec1e7bb7e
 
+	measure 'Prezzo in validità' =
+			
+			CALCULATE(
+			    AVERAGE('Listini vendita (liav)'[Prezzo]),
+			    'Listini vendita (liav)'[Data entrata in vigore] > DATE(2024, 1, 1),
+			    'Listini vendita (liav)'[Data entrata in vigore]< DATE(2024, 12, 11)
+			)
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 9c22f6d5-e9c3-4cbd-a968-b7bbeacf770f
+
 	column Prezzo
 		dataType: double
 		lineageTag: 2c7e271b-5d24-4264-8efd-8bf377847e63
@@ -68,7 +78,7 @@ table 'Listini vendita (liav)'
 
 	column 'Data fine vigore'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: da1d3ec2-f670-456b-a932-465ff22db8a7
 		summarizeBy: none
 		sourceColumn: Data fine vigore

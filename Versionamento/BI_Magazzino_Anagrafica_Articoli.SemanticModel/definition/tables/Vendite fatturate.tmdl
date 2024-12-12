@@ -9,7 +9,7 @@ table 'Vendite fatturate'
 		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
 		lineageTag: f9d7bb9f-f3c0-486b-a0bf-f341472cbd82
 
-	measure 'Media importo vendita' = AVERAGE('Vendite fatturate'[Importo netto riga])
+	measure 'Media importo vendita' = DIVIDE('Vendite fatturate'[Fatturato],[Quantità fatturata])
 		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
 		lineageTag: 83c010b1-4174-459a-b3d1-2bcbd6076af6
 
@@ -145,7 +145,7 @@ table 'Vendite fatturate'
 
 	column 'Prezzo vendita'
 		dataType: decimal
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
 		lineageTag: 3a719428-c563-4349-b76e-9193d7f74217
 		summarizeBy: none
 		sourceColumn: Prezzo vendita
