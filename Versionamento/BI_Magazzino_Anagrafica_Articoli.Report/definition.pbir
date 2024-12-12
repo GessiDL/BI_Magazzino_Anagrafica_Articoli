@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../BI_Magazzino_Anagrafica_Articoli.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

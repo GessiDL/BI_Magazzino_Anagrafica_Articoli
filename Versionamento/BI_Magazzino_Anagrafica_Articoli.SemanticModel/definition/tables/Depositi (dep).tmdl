@@ -1,0 +1,42 @@
+table 'Depositi (dep)'
+	isHidden
+	lineageTag: 2e9d4885-7470-416e-9412-e52b1602c702
+
+	column sigla_deposito
+		dataType: string
+		isHidden
+		lineageTag: 69b96545-ac67-441d-9d8b-c92da9fab9e6
+		summarizeBy: none
+		sourceColumn: sigla_deposito
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descrizione deposito'
+		dataType: string
+		isHidden
+		lineageTag: e29bb7a7-904b-46a0-b203-651267aaa41c
+		summarizeBy: none
+		sourceColumn: Descrizione deposito
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Depositi (dep)' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from dep"),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"d_sigla_dep", "sigla_deposito"}, {"d_descr", "Descrizione deposito"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"sigla_deposito", "Descrizione deposito"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

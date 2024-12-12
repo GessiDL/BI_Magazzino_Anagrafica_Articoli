@@ -1,0 +1,217 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1069,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1126,
+            "y": 261
+          },
+          "nodeIndex": "Anagrafica articoli",
+          "nodeLineageTag": "cd546146-3a9f-4f6a-8ba9-16761599f89c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1707,
+            "y": 0
+          },
+          "nodeIndex": "Raggruppamento articoli (smag_smg_tipo=R)",
+          "nodeLineageTag": "f27de3c2-5e55-4f4a-96bf-5b857848949d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 917,
+            "y": 0
+          },
+          "nodeIndex": "Gruppo merceologico (smag_smg_tipo=G)",
+          "nodeLineageTag": "8b7aa4c1-cef7-4004-8d8f-622349d6e275",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 649,
+            "y": 0
+          },
+          "nodeIndex": "Classe Inventariale (smag_smg_tipo=C)",
+          "nodeLineageTag": "bdd683df-cc70-4205-baae-3007dc8efe44",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1449,
+            "y": 0
+          },
+          "nodeIndex": "Tipo Articolo (tab_manuale)",
+          "nodeLineageTag": "edef664e-15c9-40b0-b202-a8bbed2ffdb2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 382,
+            "y": 0
+          },
+          "nodeIndex": "MRP",
+          "nodeLineageTag": "b9ecad0a-f2f7-4ed2-a871-eff48f1d0609",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1196,
+            "y": 0
+          },
+          "nodeIndex": "Depositi (dep)",
+          "nodeLineageTag": "2e9d4885-7470-416e-9412-e52b1602c702",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1971,
+            "y": 0
+          },
+          "nodeIndex": "Stato Articolo",
+          "nodeLineageTag": "b06e0a9c-ea1b-4a39-9ee7-4819e61eed2c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 2212,
+            "y": 0
+          },
+          "nodeIndex": "Qualifica Articolo",
+          "nodeLineageTag": "72d19b0b-cc0c-4219-b64d-c359ae5d0ddd",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 2470,
+            "y": 0
+          },
+          "nodeIndex": "Tipologia Prodotto",
+          "nodeLineageTag": "0f067cae-8321-4720-adfa-ae0afd2fb843",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 2727,
+            "y": 0
+          },
+          "nodeIndex": "Controllo Qualità",
+          "nodeLineageTag": "d77d9a29-37c4-4772-bb82-2aa70a4f5960",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 2972,
+            "y": 0
+          },
+          "nodeIndex": "Linea",
+          "nodeLineageTag": "0cbaf5dc-8654-49c4-858e-f6c91f7f1b10",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 1479,
+            "y": 274.5
+          },
+          "nodeIndex": "Vendite fatturate",
+          "nodeLineageTag": "72d577a6-604e-4dce-a70f-83f656ebc5c0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 1957,
+            "y": 194.5
+          },
+          "nodeIndex": "Ordini clienti",
+          "nodeLineageTag": "5198beef-c834-4fa0-b99c-32f3d353413d",
+          "size": {
+            "height": 489,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 87,
+            "y": 0
+          },
+          "nodeIndex": "Stato ordini",
+          "nodeLineageTag": "2265eb5d-6f0c-427b-a0f4-94bafe4ce398",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "Tutte le tabelle",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Tutte le tabelle",
+  "defaultDiagram": "Tutte le tabelle"
+}

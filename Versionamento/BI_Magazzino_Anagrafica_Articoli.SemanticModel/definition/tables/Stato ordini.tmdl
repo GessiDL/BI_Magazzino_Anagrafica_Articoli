@@ -1,0 +1,43 @@
+table 'Stato ordini'
+	isHidden
+	lineageTag: 2265eb5d-6f0c-427b-a0f4-94bafe4ce398
+
+	column codice_stato*
+		dataType: string
+		isHidden
+		lineageTag: 7f9f421a-c216-46b2-bf20-f2792863350a
+		summarizeBy: none
+		sourceColumn: codice_stato*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stato ordine'
+		dataType: string
+		isHidden
+		lineageTag: eb6c0322-789d-4897-ad36-b74e6d44ef10
+		summarizeBy: none
+		sourceColumn: Stato ordine
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Stato ordini' = m
+		mode: import
+		source =
+				let
+				    Origine = Excel.Workbook(File.Contents("C:\Users\gessica.dilenardo\Documents\Power BI\Dati\F12\stato_ordine.xlsx"), null, true),
+				    Tabella2_Table = Origine{[Item="Tabella2",Kind="Table"]}[Data],
+				    #"Modificato tipo" = Table.TransformColumnTypes(Tabella2_Table,{{"Codice stato ordine", type text}, {"Stato ordine", type text}}),
+				    #"Rinominate colonne" = Table.RenameColumns(#"Modificato tipo",{{"Codice stato ordine", "codice_stato*"}})
+				in
+				    #"Rinominate colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

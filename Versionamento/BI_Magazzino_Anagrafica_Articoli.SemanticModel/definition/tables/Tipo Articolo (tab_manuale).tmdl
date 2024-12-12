@@ -1,0 +1,39 @@
+table 'Tipo Articolo (tab_manuale)'
+	isHidden
+	lineageTag: edef664e-15c9-40b0-b202-a8bbed2ffdb2
+
+	column tipo*
+		dataType: string
+		isHidden
+		lineageTag: d9ac87b1-e275-4119-be1f-d7dfd557814f
+		summarizeBy: none
+		sourceColumn: tipo*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Articolo'
+		dataType: string
+		isHidden
+		lineageTag: 51157760-6e53-439c-a295-b0830e7763e4
+		summarizeBy: none
+		sourceColumn: Tipo Articolo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tipo Articolo (tab_manuale)' = m
+		mode: import
+		source =
+				let
+				    Origine = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WclTSUXIsKslMzs/JV0hPzUstAjKVYnWilaKAMsGpRWWZVZlgvjOQ75yfl5ZalZmflwoWCkbW7FhcnJqblJOYnp4JMSAEKBuSmluQX5SYlwoUigUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"tipo*" = _t, #"Tipo Articolo" = _t]),
+				    #"Modificato tipo" = Table.TransformColumnTypes(Origine,{{"tipo*", type text}, {"Tipo Articolo", type text}})
+				in
+				    #"Modificato tipo"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

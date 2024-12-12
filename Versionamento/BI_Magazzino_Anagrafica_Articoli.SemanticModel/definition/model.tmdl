@@ -1,0 +1,42 @@
+model Model
+	culture: it-IT
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: it-IT
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Anagrafica articoli","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1452.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Anagrafica articoli'
+ref table DateTableTemplate_a03b613b-e75d-4cb2-925f-3aa8cc1a1ae3
+ref table LocalDateTable_0c574c3c-aa47-423e-9f7e-b26b8aba5e6c
+ref table LocalDateTable_c85e8b71-d317-44f5-bc0e-ec3c3896d528
+ref table 'Raggruppamento articoli (smag_smg_tipo=R)'
+ref table 'Gruppo merceologico (smag_smg_tipo=G)'
+ref table 'Classe Inventariale (smag_smg_tipo=C)'
+ref table 'Tipo Articolo (tab_manuale)'
+ref table MRP
+ref table 'Depositi (dep)'
+ref table 'Stato Articolo'
+ref table 'Qualifica Articolo'
+ref table 'Tipologia Prodotto'
+ref table Linea
+ref table 'Controllo Qualità'
+ref table 'Vendite fatturate'
+ref table LocalDateTable_ae91a8ce-d525-4751-95b1-b92eb3174244
+ref table LocalDateTable_88a1de8d-32fd-4c02-89c8-8c5a96a2862c
+ref table 'Ordini clienti'
+ref table LocalDateTable_bd041de9-9dd7-44aa-8da7-3868649b28c0
+ref table LocalDateTable_e977520a-c7ec-49b8-811c-ec8146d645c6
+ref table 'Stato ordini'
+
+ref cultureInfo it-IT
+

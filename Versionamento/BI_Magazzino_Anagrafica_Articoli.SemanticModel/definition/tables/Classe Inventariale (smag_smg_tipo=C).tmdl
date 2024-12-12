@@ -1,0 +1,42 @@
+table 'Classe Inventariale (smag_smg_tipo=C)'
+	isHidden
+	lineageTag: bdd683df-cc70-4205-baae-3007dc8efe44
+
+	column classe_inventariale^
+		dataType: string
+		isHidden
+		lineageTag: 810e7a71-4a90-4f46-9e08-c7f88714c972
+		summarizeBy: none
+		sourceColumn: classe_inventariale^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classe Inventariale'
+		dataType: string
+		isHidden
+		lineageTag: 2a278441-8d44-4007-81a4-ad08cf2a3c06
+		summarizeBy: none
+		sourceColumn: Classe Inventariale
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Classe Inventariale (smag_smg_tipo=C)' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from smag where smg_tipo=""C"""),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"smg_codice", "classe_inventariale^"}, {"smg_descri", "Classe Inventariale"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"classe_inventariale^", "Classe Inventariale"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

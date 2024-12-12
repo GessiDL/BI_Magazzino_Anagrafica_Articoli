@@ -1,0 +1,226 @@
+table 'Vendite fatturate'
+	lineageTag: 72d577a6-604e-4dce-a70f-83f656ebc5c0
+
+	measure 'Quantità fatturata' = SUM('Vendite fatturate'[Quantità venduta riga])
+		formatString: 0
+		lineageTag: 365afa4d-15a1-4ce7-b74c-48f2f28bf99c
+
+	column KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: e8aad280-5bac-4523-b164-7e267f82416f
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = User
+
+	column 'Codice Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: c8733c5a-dc96-44b7-b18b-216757a82d77
+		summarizeBy: sum
+		sourceColumn: Codice Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero DDT'
+		dataType: int64
+		formatString: 0
+		lineageTag: e4219aef-bc66-4ac0-9669-99db3d5b5277
+		summarizeBy: none
+		sourceColumn: Numero DDT
+
+		annotation SummarizationSetBy = User
+
+	column 'Data DDT'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 20d87a3b-482d-4993-a721-c4909f002147
+		summarizeBy: none
+		sourceColumn: Data DDT
+
+		variation Variazione
+			isDefault
+			relationship: 95ac7a7b-54d2-4402-a486-eb19c8bdc501
+			defaultHierarchy: LocalDateTable_ae91a8ce-d525-4751-95b1-b92eb3174244.'Gerarchia data'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Descrizione articolo'
+		dataType: string
+		lineageTag: 198d8aba-6606-46ec-91a6-13cd140ca346
+		summarizeBy: none
+		sourceColumn: Descrizione articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unità misura'
+		dataType: string
+		lineageTag: 49bb2f57-ea1c-4d1f-b5f0-6aa55cd8702e
+		summarizeBy: none
+		sourceColumn: Unità misura
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anno fattura'
+		dataType: int64
+		formatString: 0
+		lineageTag: a4866f7f-bd2f-40e3-b270-04e3fd8b41b9
+		summarizeBy: none
+		sourceColumn: Anno fattura
+
+		annotation SummarizationSetBy = User
+
+	column 'N° fattura'
+		dataType: int64
+		formatString: 0
+		lineageTag: e4bab749-18b9-4e54-93de-0a70645d34d2
+		summarizeBy: none
+		sourceColumn: N° fattura
+
+		annotation SummarizationSetBy = User
+
+	column 'Data fattura'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 1c714743-ba94-4208-8fe2-a17f805eb08b
+		summarizeBy: none
+		sourceColumn: Data fattura
+
+		variation Variazione
+			isDefault
+			relationship: 3e398469-798b-439c-b0e0-f9cde98a7a58
+			defaultHierarchy: LocalDateTable_88a1de8d-32fd-4c02-89c8-8c5a96a2862c.'Gerarchia data'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Codice agente'
+		dataType: string
+		lineageTag: d238ef65-be2f-4d13-a7d5-241cc55f57c1
+		summarizeBy: none
+		sourceColumn: Codice agente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quantità venduta riga'
+		dataType: int64
+		formatString: 0
+		lineageTag: 29174170-bff0-4967-8d9b-c57b74fda398
+		summarizeBy: none
+		sourceColumn: Quantità venduta riga
+
+		annotation SummarizationSetBy = User
+
+	column 'Quantità omaggio riga'
+		dataType: int64
+		formatString: 0
+		lineageTag: 337084e3-bc4c-4927-9588-26f7cd71c1af
+		summarizeBy: none
+		sourceColumn: Quantità omaggio riga
+
+		annotation SummarizationSetBy = User
+
+	column 'Prezzo vendita'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3a719428-c563-4349-b76e-9193d7f74217
+		summarizeBy: none
+		sourceColumn: Prezzo vendita
+
+		annotation SummarizationSetBy = User
+
+	column 'Valore sconto netto'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 902c885a-fa33-4bda-b5fc-bbc98cf4e43b
+		summarizeBy: none
+		sourceColumn: Valore sconto netto
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"it-IT"}
+
+	column 'Importo netto sconti'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: efe6e113-39df-42d8-9902-02436fbf6e75
+		summarizeBy: none
+		sourceColumn: Importo netto sconti
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"it-IT"}
+
+	column 'Importo netto riga'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 655b20cc-5807-4df9-a9df-f29889e01b72
+		summarizeBy: none
+		sourceColumn: Importo netto riga
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"it-IT"}
+
+	column Stato
+		dataType: string
+		lineageTag: ef1dce1b-69dd-4f16-91e5-c8be79e2244f
+		summarizeBy: none
+		sourceColumn: Stato
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codice articolo'
+		dataType: string
+		lineageTag: 27c23a82-a985-4c56-9fe6-e1397ab478ab
+		summarizeBy: none
+		sourceColumn: Codice articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column numero_ordine
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cbc8d19a-021a-46cb-b7b0-cd331c386e76
+		summarizeBy: none
+		sourceColumn: numero_ordine
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Numero Ordine' =
+			
+			VAR NumeroOriginale = 'Vendite fatturate'[numero_ordine] -- Il numero originale
+			VAR LunghezzaPrefisso = 2 -- Il numero di cifre fisse del prefisso
+			VAR Prefisso = (LEFT(NumeroOriginale, LunghezzaPrefisso))-10 -- Estrae il prefisso
+			VAR Suffisso = MOD(NumeroOriginale,10000000) -- Estrae il suffisso variabile
+			RETURN IF('Vendite fatturate'[numero_ordine]=0,"non presente",Prefisso & "/" & Suffisso)
+		lineageTag: a44d77c7-fee8-4440-be68-7f8d7a5679f6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Vendite fatturate' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from cdco#(lf)where cdco_anno_fat >= 2020"),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"cdco_serial", "KEY"}, {"cdco_data_ddt", "Data DDT"}, {"cdco_sigla_art", "Codice articolo"}, {"cdco_descr_art", "Descrizione articolo"}, {"cdco_anno_fat", "Anno fattura"}, {"cdco_data_fat", "Data fattura"}, {"cdco_num_fat", "N° fattura"}, {"cdco_un_mis", "Unità misura"}, {"cdco_agente", "Codice agente"}, {"cdco_qta_ven", "Quantità venduta riga"}, {"cdco_qta_oma", "Quantità omaggio riga"}, {"cdco_prezzo", "Prezzo vendita"}}),
+				    #"Rinominate colonne1" = Table.RenameColumns(#"Rinominate colonne",{{"cdco_sc_1", "Valore sconto netto"}, {"cdco_netto", "Importo netto sconti"}, {"cdco_importo", "Importo netto riga"}, {"cdco_des_paese", "Stato"}, {"cdco_cli", "Codice Cliente"}, {"cdco_num_ddt", "Numero DDT"}, {"cdco_ser_ord", "numero_ordine"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne1",{"KEY", "Codice Cliente", "Numero DDT", "Data DDT", "Codice articolo", "Descrizione articolo", "Unità misura", "Anno fattura", "N° fattura", "Data fattura", "Codice agente", "Quantità venduta riga", "Quantità omaggio riga", "Prezzo vendita", "Valore sconto netto", "Importo netto sconti", "Importo netto riga", "Stato", "numero_ordine"}),
+				    #"Modificato tipo2" = Table.TransformColumnTypes(#"Rimosse altre colonne",{{"Importo netto riga", Currency.Type}, {"Importo netto sconti", Currency.Type}, {"Anno fattura", Int64.Type}, {"Quantità venduta riga", Int64.Type}, {"Quantità omaggio riga", Int64.Type}, {"Prezzo vendita", Currency.Type}, {"Valore sconto netto", Currency.Type}})
+				in
+				    #"Modificato tipo2"
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

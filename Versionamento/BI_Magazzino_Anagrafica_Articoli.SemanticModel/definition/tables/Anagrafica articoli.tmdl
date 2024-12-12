@@ -1,0 +1,550 @@
+table 'Anagrafica articoli'
+	lineageTag: cd546146-3a9f-4f6a-8ba9-16761599f89c
+
+	measure prova = SUM('Anagrafica articoli'[Categoria])
+		formatString: 0
+		lineageTag: 38cd617b-f09b-40a6-abf3-e5840c2721f1
+
+	column 'Data Inserimento'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8d9ae866-dc05-49e5-8a36-7f204d7639ce
+		summarizeBy: none
+		sourceColumn: Data Inserimento
+
+		variation Variazione
+			isDefault
+			relationship: 241b35aa-4c8d-4216-aa1d-856f972af22a
+			defaultHierarchy: LocalDateTable_0c574c3c-aa47-423e-9f7e-b26b8aba5e6c.'Gerarchia data'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column codice_fornitore+
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4b9c3d4e-1fbd-40fa-b0c9-0455572a96cd
+		summarizeBy: none
+		sourceColumn: codice_fornitore+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column fabbisogno/scorta+
+		dataType: string
+		isHidden
+		lineageTag: 1f864c65-7860-4d37-8a0e-821517b86aa5
+		summarizeBy: none
+		sourceColumn: fabbisogno/scorta+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column lista_prelievo+
+		dataType: string
+		isHidden
+		lineageTag: e11b2c33-485f-4b4e-bc1d-dd3a11b51d15
+		summarizeBy: none
+		sourceColumn: lista_prelievo+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column raggruppamento_spedizione+
+		dataType: string
+		isHidden
+		lineageTag: 485d4d0c-0c20-4071-86b9-50ebf5e1639c
+		summarizeBy: none
+		sourceColumn: raggruppamento_spedizione+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codice Articolo'
+		dataType: string
+		lineageTag: 087538c7-ff88-4c9c-8af4-2f2cf11ef8f9
+		summarizeBy: none
+		sourceColumn: Codice Articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descrizione Articolo'
+		dataType: string
+		lineageTag: 4ff4123a-9cdc-414d-8f50-ad397746752c
+		summarizeBy: none
+		sourceColumn: Descrizione Articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column raggruppamento_articoli^
+		dataType: string
+		isHidden
+		lineageTag: d7e0e742-2a60-40fe-b216-e0bce19135a4
+		summarizeBy: none
+		sourceColumn: raggruppamento_articoli^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column gruppo_merceologico^
+		dataType: string
+		isHidden
+		lineageTag: a9afbc16-68cb-4032-a1d5-393f451f63f0
+		summarizeBy: none
+		sourceColumn: gruppo_merceologico^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column classe_inventariale^
+		dataType: string
+		isHidden
+		lineageTag: 9ca056ce-bf04-48d8-968b-5bbdc76b6800
+		summarizeBy: none
+		sourceColumn: classe_inventariale^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unità Misura Gestionale'
+		dataType: string
+		lineageTag: ca30c861-a6f1-459e-b98f-ca7f6bbfc3fb
+		summarizeBy: none
+		sourceColumn: Unità Misura Gestionale
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unità Misura Acquisti'
+		dataType: string
+		lineageTag: e2c045e1-014a-43a5-bed6-2cc40d54de12
+		summarizeBy: none
+		sourceColumn: Unità Misura Acquisti
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unità Misura Doganale'
+		dataType: string
+		lineageTag: cb842c13-44b9-4711-8f83-5f13dff1f740
+		summarizeBy: none
+		sourceColumn: Unità Misura Doganale
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo*
+		dataType: string
+		isHidden
+		lineageTag: a7e1627a-388e-434d-9543-dc744462364a
+		summarizeBy: none
+		sourceColumn: tipo*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column movimentazione_magazzino+
+		dataType: string
+		isHidden
+		lineageTag: 6ded6b4a-8fd7-413a-80af-48206281a78f
+		summarizeBy: none
+		sourceColumn: movimentazione_magazzino+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria+
+		dataType: string
+		isHidden
+		lineageTag: fc6152e8-fbca-411a-ae2e-4c016cec5a1f
+		summarizeBy: none
+		sourceColumn: categoria+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codice a barre'
+		dataType: string
+		lineageTag: 0c18d6a8-ae09-4145-9b75-ef470b77b7f7
+		summarizeBy: none
+		sourceColumn: Codice a barre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reparto
+		dataType: string
+		lineageTag: 1e67d5d2-c418-4b80-84c4-74e2b227266a
+		summarizeBy: none
+		sourceColumn: Reparto
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_mrp*
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2a068bb3-8752-4dbc-b072-38fd07aadd64
+		summarizeBy: sum
+		sourceColumn: tipo_mrp*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposito_preferenziale^
+		dataType: string
+		isHidden
+		lineageTag: 39016901-5b03-47be-91c6-3264091afd0d
+		summarizeBy: none
+		sourceColumn: deposito_preferenziale^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column stato_articolo*
+		dataType: string
+		isHidden
+		lineageTag: 6a8757ef-ddeb-4c9f-b767-84cf7e399f37
+		summarizeBy: none
+		sourceColumn: stato_articolo*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LeadTime fornitore [gg]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6531a13b-e8fd-4861-925f-9c75f47af166
+		summarizeBy: none
+		sourceColumn: LeadTime fornitore [gg]
+
+		annotation SummarizationSetBy = User
+
+	column 'Lotto Riordino'
+		dataType: double
+		lineageTag: d775a33d-7438-43de-9086-72c747763e18
+		summarizeBy: none
+		sourceColumn: Lotto Riordino
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Scorta minima'
+		dataType: double
+		lineageTag: b06ef76b-720d-4390-a066-8d71cb682835
+		summarizeBy: none
+		sourceColumn: Scorta minima
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column qualifica*
+		dataType: string
+		isHidden
+		lineageTag: a6fe9f56-3951-4c21-aa56-c33c6b06bb03
+		summarizeBy: none
+		sourceColumn: qualifica*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column commercializzato+
+		dataType: string
+		isHidden
+		lineageTag: 4b3878d9-2d62-49b7-a69a-e2b466931f65
+		summarizeBy: none
+		sourceColumn: commercializzato+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data ultimo acquisto'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c4d271e3-bf85-4eaf-a473-6c506d4b6bb9
+		summarizeBy: none
+		sourceColumn: Data ultimo acquisto
+
+		variation Variazione
+			isDefault
+			relationship: b504f4cd-a196-4fe8-a5ea-77cd2f76ca8f
+			defaultHierarchy: LocalDateTable_c85e8b71-d317-44f5-bc0e-ec3c3896d528.'Gerarchia data'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column tipologia_prodotto^
+		dataType: string
+		isHidden
+		lineageTag: fe1805a1-c55e-4837-8363-1fa0f6e95fa1
+		summarizeBy: none
+		sourceColumn: tipologia_prodotto^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column linea^
+		dataType: string
+		isHidden
+		lineageTag: 973b3919-1782-4313-920c-b78f92a9d420
+		summarizeBy: none
+		sourceColumn: linea^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column articolo_riferimento+
+		dataType: string
+		isHidden
+		lineageTag: 16fa5572-c30f-49de-8ea6-0e67c7744a60
+		summarizeBy: none
+		sourceColumn: articolo_riferimento+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column controllo_qualita^
+		dataType: string
+		isHidden
+		lineageTag: 4b777afe-b98b-4a0e-a6a1-f7ebc40d8cb5
+		summarizeBy: none
+		sourceColumn: controllo_qualita^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column controllo_accettazione+
+		dataType: string
+		isHidden
+		lineageTag: 133089be-3ba2-49c0-a3aa-469c283d7a5a
+		summarizeBy: none
+		sourceColumn: controllo_accettazione+
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codice Fornitore' =
+			
+			VAR NumeroOrigine = 'Anagrafica articoli'[codice_fornitore+]
+			VAR Mastro = QUOTIENT(NumeroOrigine,10000000)
+			VAR x = NumeroOrigine - (Mastro*10000000)
+			VAR Conto = QUOTIENT(x,10000)
+			VAR Sottoconto = x-(Conto*10000)
+			RETURN IF(NumeroOrigine=0,"non inserito",Mastro & "-" & Conto & "-" & Sottoconto)
+		lineageTag: e1ff5a50-8633-4ee1-9cde-7ae3403adb9b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Riordino = IF('Anagrafica articoli'[fabbisogno/scorta+]="F","Fabbisogno","Scorta Minima")
+		lineageTag: 6c21d29b-02f5-4505-a2b3-00eeedbc1acf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lista di Prelelievo' = IF('Anagrafica articoli'[lista_prelievo+]="S", "Si", "No")
+		lineageTag: 59a09cff-08bc-40c1-9048-2e9d6b92153f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Raggruppamento Spedizione' = IF('Anagrafica articoli'[raggruppamento_spedizione+]="S", "Si", "No")
+		lineageTag: 4fb1c348-832b-4212-b135-c2f4f2cbcfa6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movimentato a magazzino' = if('Anagrafica articoli'[movimentazione_magazzino+]="S", "Si", "No")
+		lineageTag: ea0da34f-970d-4cf4-ab79-ad712cb60822
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria = if('Anagrafica articoli'[categoria+]="A","Acquisto", IF('Anagrafica articoli'[categoria+]="P","Produzione","Fittizio"))
+		lineageTag: f48dd39e-1c02-4ce7-b18c-3890c0016b89
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Commercializzato = IF('Anagrafica articoli'[commercializzato+]="S","Si","No")
+		lineageTag: 16d7e46c-7c22-407d-abe0-c614dcfeee30
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dipendente da altro modello' = IF(RIGHT('Anagrafica articoli'[articolo_riferimento+],1)="*","Si","No")
+		lineageTag: 8ff374ac-dad6-40a2-a422-8e643590c34f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Controlli in accettazione' = IF('Anagrafica articoli'[controllo_accettazione+]="S", "Si", "No")
+		lineageTag: d30f76df-1ce3-4776-b526-4aac173fabe3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Raggruppamento Articoli'
+		dataType: string
+		lineageTag: 0874633e-df3a-4831-9588-77ffb8df9525
+		summarizeBy: none
+		sourceColumn: Raggruppamento Articoli
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gruppo Merceologico'
+		dataType: string
+		lineageTag: 2fa57e23-8024-43a5-ad72-d2fb1cfac713
+		summarizeBy: none
+		sourceColumn: Gruppo Merceologico
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classe Inventariale'
+		dataType: string
+		lineageTag: 68675cae-7672-425c-a76f-d5c40d12c971
+		summarizeBy: none
+		sourceColumn: Classe Inventariale
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unita misura Gestionale/Acquisti' = ```
+			
+			IF( NOT(ISBLANK ('Anagrafica articoli'[Unità Misura Acquisti])) && 
+			    NOT(ISBLANK('Anagrafica articoli'[Unità Misura Gestionale])) && 
+			    'Anagrafica articoli'[Unità Misura Gestionale]='Anagrafica articoli'[Unità Misura Acquisti],
+			    "Uguali",
+			    "Diverse"
+			    )
+			```
+		lineageTag: 241e4d81-026c-403d-989a-79e683beba25
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Articolo'
+		dataType: string
+		lineageTag: d875c3af-61e7-412a-bd7d-add1e5a6229d
+		summarizeBy: none
+		sourceColumn: Tipo Articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo di MRP'
+		dataType: string
+		lineageTag: 6871ce1a-1299-4db8-857d-3f19f786bc05
+		summarizeBy: none
+		sourceColumn: Tipo di MRP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descrizione deposito'
+		dataType: string
+		lineageTag: b137e8cc-28db-4c55-8034-fd487b841916
+		summarizeBy: none
+		sourceColumn: Descrizione deposito
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stato Articolo'
+		dataType: string
+		lineageTag: 4b0166dc-a0f7-4937-ab3c-0e2e472ffee0
+		summarizeBy: none
+		sourceColumn: Stato Articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qualifica Articolo'
+		dataType: string
+		lineageTag: 790964c7-86da-4f76-a7ea-0bfa1b47192c
+		summarizeBy: none
+		sourceColumn: Qualifica Articolo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipologia Prodotto'
+		dataType: string
+		lineageTag: 4cce775d-c30c-420c-80e7-816eb51151fa
+		summarizeBy: none
+		sourceColumn: Tipologia Prodotto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: string
+		lineageTag: b5e7a96a-18be-48c4-b964-739517a3f3ab
+		summarizeBy: none
+		sourceColumn: Linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo controllo qualità'
+		dataType: string
+		lineageTag: b9b467e5-a8cf-4221-a140-bf0dad309299
+		summarizeBy: none
+		sourceColumn: Tipo controllo qualità
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Anagrafica articoli' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from art"),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"a_stato_art", "stato_articolo*"}, {"a_scorta_minima", "Scorta minima"}, {"a_forn_leadtime", "LeadTime fornitore [gg]"}, {"a_lotto_riord", "Lotto Riordino"}, {"a_data_ult_acq", "Data ultimo acquisto"}, {"a_tipologia_art", "tipologia_prodotto^"}, {"a_commerc", "commercializzato+"}, {"a_linea", "linea^"}, {"a_gr_merc", "gruppo_merceologico^"}, {"a_cl_inv", "classe_inventariale^"}, {"a_raggr_art", "raggruppamento_articoli^"}, {"a_tipo", "tipo*"}, {"a_reparto", "Reparto"}, {"a_qualifica", "qualifica*"}, {"a_data_ins", "Data Inserimento"}, {"a_cod_forn", "codice_fornitore+"}, {"a_fabb_scorta", "fabbisogno/scorta+"}, {"a_lista_prel", "lista_prelievo+"}, {"a_raggr_sped", "raggruppamento_spedizione+"}, {"a_sigla_art", "Codice Articolo"}, {"a_descr_art", "Descrizione Articolo"}, {"a_un_mis", "Unità Misura Gestionale"}, {"a_un_mis_2", "Unità Misura Acquisti"}, {"a_un_mis_dog", "Unità Misura Doganale"}, {"a_mov_magaz", "movimentazione_magazzino+"}, {"a_acq_prod", "categoria+"}, {"a_codice_barre", "Codice a barre"}, {"a_mrp_type", "tipo_mrp*"}, {"a_dep_pref", "deposito_preferenziale^"}, {"a_art_rif", "articolo_riferimento+"}, {"a_contr_qual", "controllo_qualita^"}, {"a_contr_accett", "controllo_accettazione+"}}),
+				    #"Modificato tipo" = Table.TransformColumnTypes(#"Rinominate colonne",{{"tipo_mrp*", Int64.Type}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Modificato tipo",{"Data Inserimento", "codice_fornitore+", "fabbisogno/scorta+", "lista_prelievo+", "raggruppamento_spedizione+", "Codice Articolo", "Descrizione Articolo", "raggruppamento_articoli^", "gruppo_merceologico^", "classe_inventariale^", "Unità Misura Gestionale", "Unità Misura Acquisti", "Unità Misura Doganale", "tipo*", "movimentazione_magazzino+", "categoria+", "Codice a barre", "Reparto", "tipo_mrp*", "deposito_preferenziale^", "stato_articolo*", "LeadTime fornitore [gg]", "Lotto Riordino", "Scorta minima", "qualifica*", "commercializzato+", "Data ultimo acquisto", "tipologia_prodotto^", "linea^", "articolo_riferimento+", "controllo_qualita^", "controllo_accettazione+"}),
+				    #"Merge di query Raggruppamento articoli" = Table.NestedJoin(#"Rimosse altre colonne", {"raggruppamento_articoli^"}, #"Raggruppamento articoli (smag_smg_tipo=R)", {"raggruppamento_articoli^"}, "Raggruppamento articoli (smag_smg_tipo=R)", JoinKind.LeftOuter),
+				    #"Visualizzazione Raggruppamento Articoli" = Table.ExpandTableColumn(#"Merge di query Raggruppamento articoli", "Raggruppamento articoli (smag_smg_tipo=R)", {"Raggruppamento Articoli"}, {"Raggruppamento Articoli"}),
+				    #"Merge di query Gruppo Merceologico" = Table.NestedJoin(#"Visualizzazione Raggruppamento Articoli", {"gruppo_merceologico^"}, #"Gruppo merceologico (smag_smg_tipo=G)", {"gruppo_merceologico^"}, "Gruppo merceologico (smag_smg_tipo=G)", JoinKind.LeftOuter),
+				    #"Visualizzazione Gruppo Merceologico" = Table.ExpandTableColumn(#"Merge di query Gruppo Merceologico", "Gruppo merceologico (smag_smg_tipo=G)", {"Gruppo Merceologico"}, {"Gruppo Merceologico"}),
+				    #"Merge di query Classe Inventariale" = Table.NestedJoin(#"Visualizzazione Gruppo Merceologico", {"classe_inventariale^"}, #"Classe Inventariale (smag_smg_tipo=C)", {"classe_inventariale^"}, "Classe Inventariale (smag_smg_tipo=C)", JoinKind.LeftOuter),
+				    #"Visualizzazione Classe Inventariale" = Table.ExpandTableColumn(#"Merge di query Classe Inventariale", "Classe Inventariale (smag_smg_tipo=C)", {"Classe Inventariale"}, {"Classe Inventariale"}),
+				    #"Merge di query Tipo Articolo" = Table.NestedJoin(#"Visualizzazione Classe Inventariale", {"tipo*"}, #"Tipo Articolo (tab_manuale)", {"tipo*"}, "Tipo Articolo (tab_manuale)", JoinKind.LeftOuter),
+				    #"Visualizzazione Tipo Articolo" = Table.ExpandTableColumn(#"Merge di query Tipo Articolo", "Tipo Articolo (tab_manuale)", {"Tipo Articolo"}, {"Tipo Articolo"}),
+				    #"Merge di query Tipo MRP" = Table.NestedJoin(#"Visualizzazione Tipo Articolo", {"tipo_mrp*"}, MRP, {"tipo_mrp*"}, "MRP", JoinKind.LeftOuter),
+				    #"Visualizzazione Tipo MRP" = Table.ExpandTableColumn(#"Merge di query Tipo MRP", "MRP", {"Tipo di MRP"}, {"Tipo di MRP"}),
+				    #"Merge di query Deposito" = Table.NestedJoin(#"Visualizzazione Tipo MRP", {"deposito_preferenziale^"}, #"Depositi (dep)", {"sigla_deposito"}, "Depositi (dep)", JoinKind.LeftOuter),
+				    #"Visualizzazione Deposito" = Table.ExpandTableColumn(#"Merge di query Deposito", "Depositi (dep)", {"Descrizione deposito"}, {"Descrizione deposito"}),
+				    #"Merge di query Stato Articolo" = Table.NestedJoin(#"Visualizzazione Deposito", {"stato_articolo*"}, #"Stato Articolo", {"stato_articolo*"}, "Stato Articolo", JoinKind.LeftOuter),
+				    #"Visualizzazione Stato Articolo" = Table.ExpandTableColumn(#"Merge di query Stato Articolo", "Stato Articolo", {"Stato Articolo"}, {"Stato Articolo.1"}),
+				    #"Rinominate colonna Stato Articolo" = Table.RenameColumns(#"Visualizzazione Stato Articolo",{{"Stato Articolo.1", "Stato Articolo"}}),
+				    #"Merge di query Qualifica" = Table.NestedJoin(#"Rinominate colonna Stato Articolo", {"qualifica*"}, #"Qualifica Articolo", {"qualifica+"}, "Qualifica Articolo", JoinKind.LeftOuter),
+				    #"Visualizzazione Qualifica" = Table.ExpandTableColumn(#"Merge di query Qualifica", "Qualifica Articolo", {"Qualifica Articolo"}, {"Qualifica Articolo.1"}),
+				    #"Rinominate colonna Qualifica" = Table.RenameColumns(#"Visualizzazione Qualifica",{{"Qualifica Articolo.1", "Qualifica Articolo"}}),
+				    #"Merge di query Tipologia Prodotto" = Table.NestedJoin(#"Rinominate colonna Qualifica", {"tipologia_prodotto^"}, #"Tipologia Prodotto", {"tipologia_prodotto^"}, "Tipologia Prodotto", JoinKind.LeftOuter),
+				    #"Visualizzazione Tipologia Prodotto" = Table.ExpandTableColumn(#"Merge di query Tipologia Prodotto", "Tipologia Prodotto", {"Tipologia Prodotto"}, {"Tipologia Prodotto.Tipologia Prodotto"}),
+				    #"Rinominata colonna Tipologia Prodotto" = Table.RenameColumns(#"Visualizzazione Tipologia Prodotto",{{"Tipologia Prodotto.Tipologia Prodotto", "Tipologia Prodotto"}}),
+				    #"Merge di query Linea" = Table.NestedJoin(#"Rinominata colonna Tipologia Prodotto", {"linea^"}, Linea, {"linea^"}, "Linea", JoinKind.LeftOuter),
+				    #"Visualizzazione Linea" = Table.ExpandTableColumn(#"Merge di query Linea", "Linea", {"Linea"}, {"Linea.1"}),
+				    #"Rinominate colonna Linea" = Table.RenameColumns(#"Visualizzazione Linea",{{"Linea.1", "Linea"}}),
+				    #"Merge di query Controllo Qualità" = Table.NestedJoin(#"Rinominate colonna Linea", {"controllo_qualita^"}, #"Controllo Qualità", {"controllo_qualità^"}, "Controllo Qualità", JoinKind.LeftOuter),
+				    #"Visualizzazione Controllo Qualità" = Table.ExpandTableColumn(#"Merge di query Controllo Qualità", "Controllo Qualità", {"Tipo controllo qualità"}, {"Tipo controllo qualità"})
+				in
+				    #"Visualizzazione Controllo Qualità"
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

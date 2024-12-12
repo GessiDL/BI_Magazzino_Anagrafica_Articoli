@@ -1,0 +1,42 @@
+table 'Raggruppamento articoli (smag_smg_tipo=R)'
+	isHidden
+	lineageTag: f27de3c2-5e55-4f4a-96bf-5b857848949d
+
+	column raggruppamento_articoli^
+		dataType: string
+		isHidden
+		lineageTag: deb2b53c-fddd-4674-ac84-a47694a12a21
+		summarizeBy: none
+		sourceColumn: raggruppamento_articoli^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Raggruppamento Articoli'
+		dataType: string
+		isHidden
+		lineageTag: 3c2832c9-9900-47e7-babd-c7241d1836e7
+		summarizeBy: none
+		sourceColumn: Raggruppamento Articoli
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Raggruppamento articoli (smag_smg_tipo=R)' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from smag where smg_tipo=""R"""),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"smg_codice", "raggruppamento_articoli^"}, {"smg_descri", "Raggruppamento Articoli"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"raggruppamento_articoli^", "Raggruppamento Articoli"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

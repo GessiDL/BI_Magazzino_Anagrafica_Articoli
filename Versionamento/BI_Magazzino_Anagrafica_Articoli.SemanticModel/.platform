@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "BI_Magazzino_Anagrafica_Articoli"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4fb964e4-ba90-4dcc-883e-a14e82f618d9"
+  }
+}

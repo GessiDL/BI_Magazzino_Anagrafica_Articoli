@@ -1,0 +1,42 @@
+table 'Controllo Qualità'
+	isHidden
+	lineageTag: d77d9a29-37c4-4772-bb82-2aa70a4f5960
+
+	column controllo_qualità^
+		dataType: string
+		isHidden
+		lineageTag: d87c65ab-ce16-4e41-bc56-c58793fd8f4c
+		summarizeBy: none
+		sourceColumn: controllo_qualità^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo controllo qualità'
+		dataType: string
+		isHidden
+		lineageTag: 5be50d42-6e18-49e7-b72c-847cefe5121d
+		summarizeBy: none
+		sourceColumn: Tipo controllo qualità
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Controllo Qualità' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from ecqu"),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"ecq_sigla", "controllo_qualità^"}, {"ecq_descrizione", "Tipo controllo qualità"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"controllo_qualità^", "Tipo controllo qualità"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

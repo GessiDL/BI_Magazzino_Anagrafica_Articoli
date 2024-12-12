@@ -1,0 +1,42 @@
+table Linea
+	isHidden
+	lineageTag: 0cbaf5dc-8654-49c4-858e-f6c91f7f1b10
+
+	column linea^
+		dataType: string
+		isHidden
+		lineageTag: ec730def-8e8a-485b-b501-9d118fc66d0f
+		summarizeBy: none
+		sourceColumn: linea^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: string
+		isHidden
+		lineageTag: 9e8c0cb0-baf1-4c37-9dc8-8f5bfe6b5802
+		summarizeBy: none
+		sourceColumn: Linea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Linea = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from smag where smg_tipo=""L"""),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"smg_codice", "linea^"}, {"smg_descri", "Linea"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"linea^", "Linea"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

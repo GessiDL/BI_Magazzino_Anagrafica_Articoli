@@ -1,0 +1,42 @@
+table 'Tipologia Prodotto'
+	isHidden
+	lineageTag: 0f067cae-8321-4720-adfa-ae0afd2fb843
+
+	column tipologia_prodotto^
+		dataType: string
+		isHidden
+		lineageTag: 80b472b7-1562-42c6-8c86-5e5b1f93e4ad
+		summarizeBy: none
+		sourceColumn: tipologia_prodotto^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipologia Prodotto'
+		dataType: string
+		isHidden
+		lineageTag: 43063ca1-3d2c-4253-a6be-7bb498f705ca
+		summarizeBy: none
+		sourceColumn: Tipologia Prodotto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tipologia Prodotto' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from smag where smg_tipo=""T"""),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"smg_codice", "tipologia_prodotto^"}, {"smg_descri", "Tipologia Prodotto"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"tipologia_prodotto^", "Tipologia Prodotto"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

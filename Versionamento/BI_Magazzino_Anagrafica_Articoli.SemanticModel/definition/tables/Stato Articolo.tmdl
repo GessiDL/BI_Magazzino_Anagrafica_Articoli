@@ -1,0 +1,39 @@
+table 'Stato Articolo'
+	isHidden
+	lineageTag: b06e0a9c-ea1b-4a39-9ee7-4819e61eed2c
+
+	column stato_articolo*
+		dataType: string
+		isHidden
+		lineageTag: ccb52394-9311-4435-9fb6-2f2e0fe31571
+		summarizeBy: none
+		sourceColumn: stato_articolo*
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stato Articolo'
+		dataType: string
+		isHidden
+		lineageTag: 0ad55456-208c-4722-83d1-2c5b66e176e6
+		summarizeBy: none
+		sourceColumn: Stato Articolo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Stato Articolo' = m
+		mode: import
+		source =
+				let
+				    Origine = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8lPSUfLLL8pNzElVitWJVvIH8v2TivNzUkvywQKeQAHPPIV8sFhxcmpeVSJY3BUinpqTmZuZl1iVmZ8HNCAWAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"stato_articolo*" = _t, #"Stato Articolo" = _t]),
+				    #"Modificato tipo" = Table.TransformColumnTypes(Origine,{{"stato_articolo*", type text}, {"Stato Articolo", type text}})
+				in
+				    #"Modificato tipo"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

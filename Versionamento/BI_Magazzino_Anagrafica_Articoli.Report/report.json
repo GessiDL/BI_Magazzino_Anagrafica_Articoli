@@ -1,0 +1,206 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"275L\"}}}}}]}}",
+      "displayName": "Pagina 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"de708d11408e549051ae\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Categoria\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"fafbc45b0ed07d508e3c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Categoria\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Categoria\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Produzione'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isLockedInViewMode\":true},{\"name\":\"28e707a3385c025cc806\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Stato Articolo\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Stato Articolo\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Normale'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isLockedInViewMode\":true},{\"name\":\"22cdad31b3073ae63003\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Codice Articolo\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Not\":{\"Expression\":{\"StartsWith\":{\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Codice Articolo\"}},\"Right\":{\"Literal\":{\"Value\":\"'L'\"}}}}}},\"Right\":{\"Not\":{\"Expression\":{\"StartsWith\":{\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Codice Articolo\"}},\"Right\":{\"Literal\":{\"Value\":\"'AV3'\"}}}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"isLockedInViewMode\":true},{\"name\":\"4564a080d55c216b58c2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Codice Articolo\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"StartsWith\":{\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Codice Articolo\"}},\"Right\":{\"Literal\":{\"Value\":\"'9'\"}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"isLockedInViewMode\":true},{\"name\":\"52f38b15b0401401b0b5\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Classe Inventariale\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"b574d077e0e689200d18\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Descrizione Articolo\"}},\"type\":\"Categorical\",\"howCreated\":1}]",
+      "height": 720.00,
+      "name": "209e8e06e786cb065005",
+      "visualContainers": [],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Filtri",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"1f58f07a60aaac52b51b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Codice Articolo\"}},\"type\":\"Categorical\",\"howCreated\":1},{\"name\":\"528179599edd22c01021\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Codice Fornitore\"}},\"type\":\"Categorical\",\"howCreated\":1},{\"name\":\"06ce0fd2081a540889e9\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Anagrafica articoli\"}},\"Property\":\"Descrizione Articolo\"}},\"type\":\"Categorical\",\"howCreated\":1}]",
+      "height": 1500.00,
+      "name": "d755871bddd9052e78c7",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"01db5107e2174ac20b06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":750,\"z\":0,\"width\":1800.373134328358,\"height\":750,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 750.00,
+          "width": 1800.37,
+          "x": 0.00,
+          "y": 750.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"02ab15739e420143d0cd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.925373134328357,\"y\":789.1791044776119,\"z\":16000,\"width\":1757.4626865671642,\"height\":666.044776119403,\"tabOrder\":16000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Codice Articolo\"},{\"queryRef\":\"Anagrafica articoli.Descrizione Articolo\"},{\"queryRef\":\"Anagrafica articoli.Categoria\"},{\"queryRef\":\"Anagrafica articoli.Classe Inventariale\"},{\"queryRef\":\"Anagrafica articoli.Reparto\"},{\"queryRef\":\"Anagrafica articoli.Qualifica Articolo\"},{\"queryRef\":\"Anagrafica articoli.Tipologia Prodotto\"},{\"queryRef\":\"Anagrafica articoli.Gruppo Merceologico\"},{\"queryRef\":\"Anagrafica articoli.Raggruppamento Articoli\"},{\"queryRef\":\"Anagrafica articoli.Linea\"},{\"queryRef\":\"Anagrafica articoli.Stato Articolo\"},{\"queryRef\":\"Anagrafica articoli.Tipo Articolo\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Codice Articolo\"},\"Name\":\"Anagrafica articoli.Codice Articolo\",\"NativeReferenceName\":\"Codice Articolo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Descrizione Articolo\"},\"Name\":\"Anagrafica articoli.Descrizione Articolo\",\"NativeReferenceName\":\"Descrizione Articolo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Gruppo Merceologico\"},\"Name\":\"Anagrafica articoli.Gruppo Merceologico\",\"NativeReferenceName\":\"Gruppo Merceologico\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Raggruppamento Articoli\"},\"Name\":\"Anagrafica articoli.Raggruppamento Articoli\",\"NativeReferenceName\":\"Raggruppamento Articoli\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Linea\"},\"Name\":\"Anagrafica articoli.Linea\",\"NativeReferenceName\":\"Linea\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Stato Articolo\"},\"Name\":\"Anagrafica articoli.Stato Articolo\",\"NativeReferenceName\":\"Stato Articolo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Tipo Articolo\"},\"Name\":\"Anagrafica articoli.Tipo Articolo\",\"NativeReferenceName\":\"Tipo Articolo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Reparto\"},\"Name\":\"Anagrafica articoli.Reparto\",\"NativeReferenceName\":\"Reparto\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Qualifica Articolo\"},\"Name\":\"Anagrafica articoli.Qualifica Articolo\",\"NativeReferenceName\":\"Qualifica Articolo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Classe Inventariale\"},\"Name\":\"Anagrafica articoli.Classe Inventariale\",\"NativeReferenceName\":\"Classe Inventariale\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Tipologia Prodotto\"},\"Name\":\"Anagrafica articoli.Tipologia Prodotto\",\"NativeReferenceName\":\"Tipologia Prodotto\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Categoria\"},\"Name\":\"Anagrafica articoli.Categoria\",\"NativeReferenceName\":\"Categoria\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"222.96995691863884D\"}}}},\"selector\":{\"metadata\":\"Anagrafica articoli.Linea\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"263.79104305762166D\"}}}},\"selector\":{\"metadata\":\"Anagrafica articoli.Descrizione Articolo\"}}]}}}",
+          "filters": "[]",
+          "height": 666.04,
+          "width": 1757.46,
+          "x": 14.93,
+          "y": 789.18,
+          "z": 16000.00
+        },
+        {
+          "config": "{\"name\":\"03f8d0d8bc607b242e70\",\"layouts\":[{\"id\":0,\"position\":{\"x\":216.4179104477612,\"y\":210.82089552238804,\"z\":8000,\"width\":171.6417910447761,\"height\":298.5074626865671,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Reparto\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Reparto\"},\"Name\":\"Anagrafica articoli.Reparto\",\"NativeReferenceName\":\"Reparto\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 298.51,
+          "width": 171.64,
+          "x": 216.42,
+          "y": 210.82,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"0b9728095e92e1667040\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":215.74007220216606,\"height\":210.54151624548734,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Classe Inventariale\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Classe Inventariale\"},\"Name\":\"Anagrafica articoli.Classe Inventariale\",\"NativeReferenceName\":\"Classe Inventariale\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 210.54,
+          "width": 215.74,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"190d396953b8161a6362\",\"layouts\":[{\"id\":0,\"position\":{\"x\":805.7761732851985,\"y\":0,\"z\":14000,\"width\":193.64620938628158,\"height\":553.6462093862816,\"tabOrder\":14000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Unità Misura Acquisti\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Unità Misura Acquisti\"},\"Name\":\"Anagrafica articoli.Unità Misura Acquisti\",\"NativeReferenceName\":\"Unità Misura Acquisti\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 553.65,
+          "width": 193.65,
+          "x": 805.78,
+          "y": 0.00,
+          "z": 14000.00
+        },
+        {
+          "config": "{\"name\":\"28163a2ea80150715392\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":210.54151624548734,\"z\":6000,\"width\":215.74007220216606,\"height\":282.02166064981947,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Qualifica Articolo\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Qualifica Articolo\"},\"Name\":\"Anagrafica articoli.Qualifica Articolo\",\"NativeReferenceName\":\"Qualifica Articolo\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.02,
+          "width": 215.74,
+          "x": 0.00,
+          "y": 210.54,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"366f10c700d7e5bac79d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":492.5631768953068,\"z\":13000,\"width\":215.74007220216606,\"height\":157.25631768953068,\"tabOrder\":13000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Tipologia Prodotto\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Tipologia Prodotto\"},\"Name\":\"Anagrafica articoli.Tipologia Prodotto\",\"NativeReferenceName\":\"Tipologia Prodotto\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 157.26,
+          "width": 215.74,
+          "x": 0.00,
+          "y": 492.56,
+          "z": 13000.00
+        },
+        {
+          "config": "{\"name\":\"370868210e652019bba3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":215.74007220216606,\"y\":105.27075812274367,\"z\":3000,\"width\":172.85198555956677,\"height\":105.27075812274367,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Controlli in accettazione\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Controlli in accettazione\"},\"Name\":\"Anagrafica articoli.Controlli in accettazione\",\"NativeReferenceName\":\"Controlli in accettazione\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 105.27,
+          "width": 172.85,
+          "x": 215.74,
+          "y": 105.27,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"401a743c040212c015d4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":388.5920577617328,\"y\":171.5523465703971,\"z\":10000,\"width\":215.74007220216606,\"height\":105.27075812274367,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Tipo Articolo\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Tipo Articolo\"},\"Name\":\"Anagrafica articoli.Tipo Articolo\",\"NativeReferenceName\":\"Tipo Articolo\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 105.27,
+          "width": 215.74,
+          "x": 388.59,
+          "y": 171.55,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"64634c1244ebdb028b46\",\"layouts\":[{\"id\":0,\"position\":{\"x\":388.5920577617328,\"y\":418.48375451263536,\"z\":12000,\"width\":215.74007220216606,\"height\":131.26353790613717,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Tipo di MRP\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Tipo di MRP\"},\"Name\":\"Anagrafica articoli.Tipo di MRP\",\"NativeReferenceName\":\"Tipo di MRP\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 131.26,
+          "width": 215.74,
+          "x": 388.59,
+          "y": 418.48,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"93ba8a5e812e5acc8000\",\"layouts\":[{\"id\":0,\"position\":{\"x\":604.3321299638989,\"y\":0,\"z\":15000,\"width\":201.44404332129963,\"height\":553.6462093862816,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Unità Misura Gestionale\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Unità Misura Gestionale\"},\"Name\":\"Anagrafica articoli.Unità Misura Gestionale\",\"NativeReferenceName\":\"Unità Misura Gestionale\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 553.65,
+          "width": 201.44,
+          "x": 604.33,
+          "y": 0.00,
+          "z": 15000.00
+        },
+        {
+          "config": "{\"name\":\"99912c40b6977d90830e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":216.4179104477612,\"y\":509.3283582089552,\"z\":17000,\"width\":171.6417910447761,\"height\":139.92537313432834,\"tabOrder\":17000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Categoria\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Categoria\"},\"Name\":\"Anagrafica articoli.Categoria\",\"NativeReferenceName\":\"Categoria\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 139.93,
+          "width": 171.64,
+          "x": 216.42,
+          "y": 509.33,
+          "z": 17000.00
+        },
+        {
+          "config": "{\"name\":\"c173caf16215490050a9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":388.5920577617328,\"y\":276.8231046931408,\"z\":11000,\"width\":215.74007220216606,\"height\":141.66064981949458,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Tipo controllo qualità\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Tipo controllo qualità\"},\"Name\":\"Anagrafica articoli.Tipo controllo qualità\",\"NativeReferenceName\":\"Tipo controllo qualità\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 141.66,
+          "width": 215.74,
+          "x": 388.59,
+          "y": 276.82,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"c946309071a2d54c5cdd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":999.4223826714801,\"y\":0,\"z\":5000,\"width\":276.8231046931408,\"height\":553.6462093862816,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Linea\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Linea\"},\"Name\":\"Anagrafica articoli.Linea\",\"NativeReferenceName\":\"Linea\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 553.65,
+          "width": 276.82,
+          "x": 999.42,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"cae2506adeb104e38201\",\"layouts\":[{\"id\":0,\"position\":{\"x\":215.74007220216606,\"y\":0,\"z\":2000,\"width\":172.85198555956677,\"height\":105.27075812274367,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Commercializzato\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Commercializzato\"},\"Name\":\"Anagrafica articoli.Commercializzato\",\"NativeReferenceName\":\"Commercializzato\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 105.27,
+          "width": 172.85,
+          "x": 215.74,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"dabe9555b48896490d12\",\"layouts\":[{\"id\":0,\"position\":{\"x\":388.5920577617328,\"y\":0,\"z\":9000,\"width\":215.74007220216606,\"height\":171.5523465703971,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Stato Articolo\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Stato Articolo\"},\"Name\":\"Anagrafica articoli.Stato Articolo\",\"NativeReferenceName\":\"Stato Articolo\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 171.55,
+          "width": 215.74,
+          "x": 388.59,
+          "y": 0.00,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"e3771f603461079a477c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1522.5342913128675,\"y\":0,\"z\":4000,\"width\":277.46570868713263,\"height\":720.7054212932724,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Gruppo Merceologico\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Gruppo Merceologico\"},\"Name\":\"Anagrafica articoli.Gruppo Merceologico\",\"NativeReferenceName\":\"Gruppo Merceologico\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"header\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 720.71,
+          "width": 277.47,
+          "x": 1522.53,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"fe0515a5a9155c3b141a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1276.2454873646209,\"y\":0,\"z\":7000,\"width\":246.93140794223825,\"height\":720,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Anagrafica articoli.Raggruppamento Articoli\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Anagrafica articoli\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Raggruppamento Articoli\"},\"Name\":\"Anagrafica articoli.Raggruppamento Articoli\",\"NativeReferenceName\":\"Raggruppamento Articoli\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 720.00,
+          "width": 246.93,
+          "x": 1276.25,
+          "y": 0.00,
+          "z": 7000.00
+        }
+      ],
+      "width": 1800.00
+    }
+  ]
+}

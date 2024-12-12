@@ -1,0 +1,42 @@
+table 'Gruppo merceologico (smag_smg_tipo=G)'
+	isHidden
+	lineageTag: 8b7aa4c1-cef7-4004-8d8f-622349d6e275
+
+	column gruppo_merceologico^
+		dataType: string
+		isHidden
+		lineageTag: 86ca27d6-c187-4650-bbc4-13665100e8af
+		summarizeBy: none
+		sourceColumn: gruppo_merceologico^
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gruppo Merceologico'
+		dataType: string
+		isHidden
+		lineageTag: 1d33cea5-f316-46da-b561-05621c8c3f9b
+		summarizeBy: none
+		sourceColumn: Gruppo Merceologico
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Gruppo merceologico (smag_smg_tipo=G)' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from smag where smg_tipo=""G"""),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"smg_codice", "gruppo_merceologico^"}, {"smg_descri", "Gruppo Merceologico"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"gruppo_merceologico^", "Gruppo Merceologico"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+
