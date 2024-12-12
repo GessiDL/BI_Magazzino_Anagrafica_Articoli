@@ -129,3 +129,12 @@ cdor_sc_1 = Valore sconto netto
 cdor_netto = Importo netto sconti
 cdor_importo = Importo netto riga
 cdor_des_paese = Stato
+
+--------------------------------------------------Tabella Listini Vendita (liav)
+lia_prezzo = Prezzo
+lia_data_ent_vig = Data entrata in vigore
+lia_sigla_art = Codice Articolo
+lia_sconto = Sconto
+lia_data_fin_vig = Data fine vigore
+lia_data_variaz = Data modifica
+lia_operatore = Operatore
