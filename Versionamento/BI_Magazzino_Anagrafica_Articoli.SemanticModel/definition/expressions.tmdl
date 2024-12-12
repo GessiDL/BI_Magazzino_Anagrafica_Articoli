@@ -1,0 +1,24 @@
+expression 'Errori in Listini vendita (liav)' =
+		let
+		Origine = #"Listini vendita (liav)",
+		  #"Tipi non corrispondenti rilevati" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Origine, Table.ColumnsOfType(Origine, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "Il tipo del valore non corrisponde al tipo della colonna.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Origine, pairs),
+		  #"Aggiunta colonna indice" = Table.AddIndexColumn(#"Tipi non corrispondenti rilevati", "Numero riga" ,1),
+		  #"Mantenuti errori" = Table.SelectRowsWithErrors(#"Aggiunta colonna indice", {"Prezzo", "Data entrata in vigore", "Codice Articolo", "Sconto", "Data fine vigore", "Operatore", "Data modifica"}),
+		  #"Riordinate colonne" = Table.ReorderColumns(#"Mantenuti errori", {"Numero riga", "Prezzo", "Data entrata in vigore", "Codice Articolo", "Sconto", "Data fine vigore", "Operatore", "Data modifica"}),
+		    #"Rimossi errori" = Table.RemoveRowsWithErrors(#"Riordinate colonne", {"Numero riga"})
+		in
+		  #"Rimossi errori"
+	lineageTag: c2c59063-204c-4919-81c3-a6dd1a347863
+	queryGroup: 'Errori di query - 12/12/2024 13:33:03'
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

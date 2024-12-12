@@ -13,20 +13,10 @@ relationship 95ac7a7b-54d2-4402-a486-eb19c8bdc501
 	fromColumn: 'Vendite fatturate'.'Data DDT'
 	toColumn: LocalDateTable_ae91a8ce-d525-4751-95b1-b92eb3174244.Date
 
-relationship 3e398469-798b-439c-b0e0-f9cde98a7a58
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Vendite fatturate'.'Data fattura'
-	toColumn: LocalDateTable_88a1de8d-32fd-4c02-89c8-8c5a96a2862c.Date
-
 relationship c53fcae9-df16-4510-958f-a07a3aa8f198
 	joinOnDateBehavior: datePartOnly
 	fromColumn: 'Ordini clienti'.'Data inserimento ordine'
 	toColumn: LocalDateTable_bd041de9-9dd7-44aa-8da7-3868649b28c0.Date
-
-relationship dbb4c6c4-5e2c-4c51-a666-6dde13382171
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Ordini clienti'.'Data consegna ordine'
-	toColumn: LocalDateTable_e977520a-c7ec-49b8-811c-ec8146d645c6.Date
 
 relationship ecd1a56b-c614-27a2-ac96-9e069795fcdf
 	fromColumn: 'Vendite fatturate'.'Codice articolo'
@@ -50,4 +40,16 @@ relationship ebc14423-3b78-4ee9-97eb-ea892251a3fa
 relationship AutoDetected_57300ba9-f46e-4476-9c0b-49cd3dcaf8ae
 	fromColumn: 'Listini vendita (liav)'.'Codice Articolo'
 	toColumn: 'Anagrafica articoli'.'Codice Articolo'
+
+relationship 46ded4cf-4076-4ee4-13f9-6db46aeea713
+	fromColumn: 'Ordini clienti'.'Codice articolo'
+	toColumn: 'Anagrafica articoli'.'Codice Articolo'
+
+relationship d1605d70-4f0f-0d3a-2462-8310973b347b
+	fromColumn: 'Vendite fatturate'.'Data fattura'
+	toColumn: Calendar.Data
+
+relationship da05cec5-c765-f629-1990-76ec44dc0fae
+	fromColumn: 'Ordini clienti'.'Data consegna ordine'
+	toColumn: Calendar.Data
 

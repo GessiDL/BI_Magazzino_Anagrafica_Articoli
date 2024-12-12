@@ -2,9 +2,8 @@ table 'Ordini clienti'
 	lineageTag: 5198beef-c834-4fa0-b99c-32f3d353413d
 
 	measure 'Quantità ordinata' = SUM('Ordini clienti'[Quantità ordine riga])
+		formatString: 0
 		lineageTag: 4dcd4297-71e9-4eed-ab29-a6cd0a7e5454
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column KEY
 		dataType: int64
@@ -75,11 +74,6 @@ table 'Ordini clienti'
 		lineageTag: 7293260d-3358-45ab-860d-86ac178fe0b4
 		summarizeBy: none
 		sourceColumn: Data consegna ordine
-
-		variation Variazione
-			isDefault
-			relationship: dbb4c6c4-5e2c-4c51-a666-6dde13382171
-			defaultHierarchy: LocalDateTable_e977520a-c7ec-49b8-811c-ec8146d645c6.'Gerarchia data'
 
 		annotation SummarizationSetBy = Automatic
 

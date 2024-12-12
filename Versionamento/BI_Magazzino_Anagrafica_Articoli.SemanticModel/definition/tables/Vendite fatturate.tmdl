@@ -5,6 +5,26 @@ table 'Vendite fatturate'
 		formatString: 0
 		lineageTag: 365afa4d-15a1-4ce7-b74c-48f2f28bf99c
 
+	measure Fatturato = SUM('Vendite fatturate'[Importo netto riga])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: f9d7bb9f-f3c0-486b-a0bf-f341472cbd82
+
+	measure 'Media importo vendita' = AVERAGE('Vendite fatturate'[Importo netto riga])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 83c010b1-4174-459a-b3d1-2bcbd6076af6
+
+	measure 'Quantità fatturata PY' = CALCULATE([Quantità fatturata],SAMEPERIODLASTYEAR('Calendar'[Data]))
+		formatString: 0
+		lineageTag: 6c55d206-c8d0-4d11-bbdb-05f88ccb7f96
+
+	measure 'Quantità Vs PY pz' = [Quantità fatturata] - [Quantità fatturata PY]
+		formatString: 0
+		lineageTag: b5be6541-18bb-4700-b2e8-dbbd6ec908d7
+
+	measure 'Quantità Vs PY %' = DIVIDE([Quantità Vs PY pz],[Quantità fatturata PY])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 74ef3321-c071-45be-8f01-6562435843a7
+
 	column KEY
 		dataType: int64
 		formatString: 0
@@ -73,6 +93,8 @@ table 'Vendite fatturate'
 		summarizeBy: none
 		sourceColumn: Anno fattura
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = User
 
 	column 'N° fattura'
@@ -90,11 +112,6 @@ table 'Vendite fatturate'
 		lineageTag: 1c714743-ba94-4208-8fe2-a17f805eb08b
 		summarizeBy: none
 		sourceColumn: Data fattura
-
-		variation Variazione
-			isDefault
-			relationship: 3e398469-798b-439c-b0e0-f9cde98a7a58
-			defaultHierarchy: LocalDateTable_88a1de8d-32fd-4c02-89c8-8c5a96a2862c.'Gerarchia data'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -159,14 +176,12 @@ table 'Vendite fatturate'
 
 	column 'Importo netto riga'
 		dataType: decimal
-		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
 		lineageTag: 655b20cc-5807-4df9-a9df-f29889e01b72
 		summarizeBy: none
 		sourceColumn: Importo netto riga
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"currencyCulture":"it-IT"}
 
 	column Stato
 		dataType: string
@@ -205,6 +220,13 @@ table 'Vendite fatturate'
 			RETURN IF('Vendite fatturate'[numero_ordine]=0,"non presente",Prefisso & "/" & Suffisso)
 		lineageTag: a44d77c7-fee8-4440-be68-7f8d7a5679f6
 		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anno_fattura = YEAR('Vendite fatturate'[Data fattura])
+		formatString: 0
+		lineageTag: df0fcc9e-87eb-4319-a9ee-419481588fd9
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 

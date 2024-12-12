@@ -1,19 +1,41 @@
 table 'Listini vendita (liav)'
 	lineageTag: 4d390e82-a0ae-4ef6-9c64-3d00393a35ea
 
+	measure 'Ultimo Prezzo Listino' =
+			
+			VAR UltimaData = CALCULATE(MAX('Listini vendita (liav)'[Data entrata in vigore]))
+			RETURN
+			    CALCULATE(
+			        LASTNONBLANK('Listini vendita (liav)'[Prezzo], 1),
+			        'Listini vendita (liav)'[Data entrata in vigore] = UltimaData
+			    )
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 9b8628f8-c3f0-4e4c-adb4-5ba6c5d88d76
+
+	measure 'Ultimo Prezzo Listino Scontato' =
+			
+			VAR UltimaData = CALCULATE(MAX('Listini vendita (liav)'[Data entrata in vigore]))
+			RETURN
+			    CALCULATE(
+			        LASTNONBLANK('Listini vendita (liav)'[Prezzo scontato], 1),
+			        'Listini vendita (liav)'[Data entrata in vigore] = UltimaData
+			    )
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: bc492566-e8cc-41d4-bdbf-bc5ec1e7bb7e
+
 	column Prezzo
 		dataType: double
 		lineageTag: 2c7e271b-5d24-4264-8efd-8bf377847e63
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Prezzo
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Data entrata in vigore'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: c9bf66e0-e675-47d3-98ff-0f671d74255d
 		summarizeBy: none
 		sourceColumn: Data entrata in vigore
@@ -36,12 +58,13 @@ table 'Listini vendita (liav)'
 		annotation SummarizationSetBy = Automatic
 
 	column Sconto
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 43955acd-d6c6-4e2d-bef1-02698eca09bd
 		summarizeBy: none
 		sourceColumn: Sconto
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Data fine vigore'
 		dataType: dateTime
@@ -69,7 +92,7 @@ table 'Listini vendita (liav)'
 
 	column 'Data modifica'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: e0ff966a-10de-4b02-965f-3bd867df3bc6
 		summarizeBy: none
 		sourceColumn: Data modifica
@@ -83,15 +106,24 @@ table 'Listini vendita (liav)'
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column 'Prezzo scontato' = 'Listini vendita (liav)'[Prezzo] - (DIVIDE('Listini vendita (liav)'[Prezzo],100)*'Listini vendita (liav)'[Sconto])
+		lineageTag: 85e1f9fa-9a1c-4f69-9563-b62f4ae4f87c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition 'Listini vendita (liav)' = m
 		mode: import
 		source =
 				let
 				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from liav"),
 				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"lia_prezzo", "Prezzo"}, {"lia_data_ent_vig", "Data entrata in vigore"}, {"lia_sigla_art", "Codice Articolo"}, {"lia_operatore", "Operatore"}, {"lia_sconto", "Sconto"}, {"lia_data_fin_vig", "Data fine vigore"}, {"lia_data_variaz", "Data modifica"}}),
-				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"Prezzo", "Data entrata in vigore", "Codice Articolo", "Sconto", "Data fine vigore", "Operatore", "Data modifica"})
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"Prezzo", "Data entrata in vigore", "Codice Articolo", "Sconto", "Data fine vigore", "Operatore", "Data modifica"}),
+				    #"Modificato tipo" = Table.TransformColumnTypes(#"Rimosse altre colonne",{{"Sconto", Int64.Type}})
 				in
-				    #"Rimosse altre colonne"
+				    #"Modificato tipo"
 
 	annotation PBI_NavigationStepName = Navigazione
 

@@ -1,0 +1,104 @@
+table Calendar
+	lineageTag: de0b6b1b-06b4-4b8a-8d44-b8d117bac037
+	dataCategory: Time
+
+	column Data
+		isKey
+		formatString: Short Date
+		lineageTag: 1f47e1d5-bcc5-44c9-93b4-f0d5bd7b3e4d
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Anno = YEAR('Calendar'[Data])
+		formatString: 0
+		lineageTag: 255cb609-8c3a-4d34-afcb-244b87487e46
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mese_n = MONTH('Calendar'[Data])
+		formatString: 0
+		lineageTag: b6d1febb-62f7-4eb8-94c9-d6a16bfdbe1a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mese =
+			
+			SWITCH(
+			    MONTH('Calendar'[Data]),
+			    1, "Gennaio",
+			    2, "Febbraio",
+			    3, "Marzo",
+			    4, "Aprile",
+			    5, "Maggio",
+			    6, "Giugno",
+			    7, "Luglio",
+			    8, "Agosto",
+			    9, "Settembre",
+			    10, "Ottobre",
+			    11, "Novembre",
+			    12, "Dicembre"
+			)
+		lineageTag: 4a8bea8d-63f5-4850-b82b-8f291ea501f4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarto = "Q" & QUARTER('Calendar'[Data])
+		lineageTag: 17ca7a65-7902-457e-b867-2bc3fbdc3864
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semestre =
+			
+			IF(
+			    MONTH('Calendar'[Data]) < 7,
+			    "S1",
+			    "S2"
+			)
+		lineageTag: 37dfaa1c-94ec-4050-a309-0896766d7896
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Settimana =
+			
+			VAR Week = WEEKNUM('Calendar'[Data], 21)
+			VAR Year =
+			SWITCH(
+			    TRUE(),
+			    'Calendar'[Mese_n] = 1 && Week > 50, 'Calendar'[Anno] - 1,
+			    'Calendar'[Mese_n] = 12 && Week = 1, 'Calendar'[Anno] + 1,
+			    'Calendar'[Anno]
+			)
+			RETURN
+			Year & "-W" & Week
+		lineageTag: 57d956e6-cebd-4f43-ae93-39411a9c5e97
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				
+				--CALENDARAUTO()
+				VAR YearForecast = YEAR(TODAY()) + 1
+				VAR StartDate = DATE(2020, 1, 1)
+				VAR EndDate = DATE(YearForecast, 12, 31)
+				
+				RETURN
+				
+				CALENDAR(
+				    StartDate,
+				    EndDate
+				)
+
+	annotation PBI_Id = e3c70c5ebbbc43eca3525d5513f90bec
+
