@@ -93,8 +93,6 @@ table 'Vendite fatturate'
 		summarizeBy: none
 		sourceColumn: Anno fattura
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = User
 
 	column 'N° fattura'
