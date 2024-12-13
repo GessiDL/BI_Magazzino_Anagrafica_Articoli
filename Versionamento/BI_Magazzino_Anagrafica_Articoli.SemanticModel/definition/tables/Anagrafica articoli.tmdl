@@ -536,6 +536,12 @@ table 'Anagrafica articoli'
 
 		annotation SummarizationSetBy = User
 
+	column Colore = RIGHT('Anagrafica articoli'[Codice Articolo],1)
+		lineageTag: 95c34948-3ae1-42b1-9355-f606e7093f47
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Anagrafica articoli' = m
 		mode: import
 		source =

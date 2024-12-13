@@ -17,7 +17,7 @@ queryGroup 'Errori di query - 13/12/2024 09:08:22'
 
 	annotation PBI_QueryGroupOrder = 1
 
-annotation PBI_QueryOrder = ["Anagrafica articoli","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini","Listini vendita (liav)","Errori in Listini vendita (liav)","Errori in Listini vendita (liav) (2)"]
+annotation PBI_QueryOrder = ["Anagrafica articoli","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini","Listini vendita (liav)","Errori in Listini vendita (liav)","Errori in Listini vendita (liav) (2)","Codici colore"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -50,6 +50,7 @@ ref table LocalDateTable_b72a4a6c-3bc0-493a-856c-7d1c89c961d7
 ref table LocalDateTable_c18939e1-0c17-4cb6-aef4-e7817106196a
 ref table LocalDateTable_e4cc534b-9cf0-4dad-9972-1e2ef5b7d0e8
 ref table Calendar
+ref table 'Codici colore'
 
 ref cultureInfo it-IT
 

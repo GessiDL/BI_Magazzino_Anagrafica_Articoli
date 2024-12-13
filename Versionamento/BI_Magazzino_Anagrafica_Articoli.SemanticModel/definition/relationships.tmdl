@@ -53,3 +53,7 @@ relationship da05cec5-c765-f629-1990-76ec44dc0fae
 	fromColumn: 'Ordini clienti'.'Data consegna ordine'
 	toColumn: Calendar.Data
 
+relationship a79da20a-e265-8867-f50d-f0e77355ac55
+	fromColumn: 'Anagrafica articoli'.Colore
+	toColumn: 'Codici colore'.'Codice Colore'
+

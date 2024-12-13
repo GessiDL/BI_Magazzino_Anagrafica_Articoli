@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 725,
-        "y": 175
+        "x": 655,
+        "y": 0
       },
       "nodes": [
         {
@@ -230,6 +230,19 @@
             "width": 234
           },
           "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 630,
+            "y": 210.25
+          },
+          "nodeIndex": "Codici colore",
+          "nodeLineageTag": "cdbcf8e2-ebe5-411e-a625-0a143a682e81",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Tutte le tabelle",
