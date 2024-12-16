@@ -5,6 +5,7 @@ xxx+ --> transcodifica con formula in altra colonna stessa tabella [Nuova colonn
 |abcd| --> Contenuto nella scheda/campo in F12 denominata "abcd"
 [Nuova colonna]
 
+a_prz_pag_stand = Costo produzione
 a_data_ins = Data Inserimento
 a_cod_forn = codice_fornitore+ (transcodifica codice fornitore 38-1-yyy) [Codice Fornitore]
 a_fabb_scorta = fabbisogno/scorta+ (F=Fabbisogno; S=Scorta minima) [Riordino]
