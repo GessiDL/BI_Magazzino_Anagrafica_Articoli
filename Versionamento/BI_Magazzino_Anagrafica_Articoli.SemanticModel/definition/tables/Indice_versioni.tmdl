@@ -1,0 +1,48 @@
+table Indice_versioni
+	lineageTag: e954b684-ef8a-4c6f-b724-93e5b57e55bc
+
+	column 'n° versione'
+		dataType: string
+		lineageTag: b1dd933e-c238-44cb-b114-26fa7a4eb9f3
+		summarizeBy: none
+		sourceColumn: n° versione
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modifiche
+		dataType: string
+		lineageTag: c1f4cc91-583e-45ac-bf5e-c372ce779a29
+		summarizeBy: none
+		sourceColumn: Modifiche
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data inizio modifiche'
+		dataType: string
+		lineageTag: 9076efa1-27b2-4905-95ec-78cf8f5693bc
+		summarizeBy: none
+		sourceColumn: Data inizio modifiche
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data rilascio'
+		dataType: string
+		lineageTag: a1f77adc-d1d6-4be1-9c70-fa5454eac97d
+		summarizeBy: none
+		sourceColumn: Data rilascio
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Indice_versioni = m
+		mode: import
+		source =
+				let
+				    Origine = Excel.Workbook(File.Contents("C:\Users\gessica.dilenardo\Documents\Power BI\Elaborati\BI_Magazzino_Anagrafica_Articoli\Versionamento\Indice versioni.xlsx"), null, true),
+				    Indice_versioni_Table = Origine{[Item="Indice_versioni",Kind="Table"]}[Data]
+				in
+				    Indice_versioni_Table
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+
