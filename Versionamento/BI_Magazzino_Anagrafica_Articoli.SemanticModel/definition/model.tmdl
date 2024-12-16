@@ -17,7 +17,22 @@ queryGroup 'Errori di query - 13/12/2024 09:08:22'
 
 	annotation PBI_QueryGroupOrder = 1
 
-annotation PBI_QueryOrder = ["Anagrafica articoli","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini","Listini vendita (liav)","Errori in Listini vendita (liav)","Errori in Listini vendita (liav) (2)","Codici colore"]
+/// Errori nelle query caricate il 16/12/2024 14:01:56.
+queryGroup 'Errori di query - 16/12/2024 14:01:56'
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// Errori nelle query caricate il 16/12/2024 14:03:53.
+queryGroup 'Errori di query - 16/12/2024 14:03:53'
+
+	annotation PBI_QueryGroupOrder = 3
+
+/// Errori nelle query caricate il 16/12/2024 14:06:04.
+queryGroup 'Errori di query - 16/12/2024 14:06:04'
+
+	annotation PBI_QueryGroupOrder = 4
+
+annotation PBI_QueryOrder = ["Anagrafica articoli","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini","Listini vendita (liav)","Errori in Listini vendita (liav)","Errori in Listini vendita (liav) (2)","Codici colore","Indice_versioni","Errori in Listini vendita (liav) (3)","Errori in Listini vendita (liav) (4)","Errori in Listini vendita (liav) (5)"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -51,6 +66,9 @@ ref table LocalDateTable_c18939e1-0c17-4cb6-aef4-e7817106196a
 ref table LocalDateTable_e4cc534b-9cf0-4dad-9972-1e2ef5b7d0e8
 ref table Calendar
 ref table 'Codici colore'
+ref table Indice_versioni
+ref table LocalDateTable_c09d6255-1ee2-4840-9d06-bb52ea5ef7c1
+ref table LocalDateTable_7fa43507-739e-44b0-853e-051210971438
 
 ref cultureInfo it-IT
 

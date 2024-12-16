@@ -131,9 +131,10 @@ table 'Listini vendita (liav)'
 				    Origine = Odbc.Query("dsn=F12 Informix DB", "select * from liav"),
 				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"lia_prezzo", "Prezzo"}, {"lia_data_ent_vig", "Data entrata in vigore"}, {"lia_sigla_art", "Codice Articolo"}, {"lia_operatore", "Operatore"}, {"lia_sconto", "Sconto"}, {"lia_data_fin_vig", "Data fine vigore"}, {"lia_data_variaz", "Data modifica"}}),
 				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"Prezzo", "Data entrata in vigore", "Codice Articolo", "Sconto", "Data fine vigore", "Operatore", "Data modifica"}),
-				    #"Modificato tipo" = Table.TransformColumnTypes(#"Rimosse altre colonne",{{"Sconto", Int64.Type}})
+				    #"Modificato tipo" = Table.TransformColumnTypes(#"Rimosse altre colonne",{{"Sconto", Int64.Type}}),
+				    #"Rimossi errori" = Table.RemoveRowsWithErrors(#"Modificato tipo", {"Sconto"})
 				in
-				    #"Modificato tipo"
+				    #"Rimossi errori"
 
 	annotation PBI_NavigationStepName = Navigazione
 

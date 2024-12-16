@@ -17,6 +17,22 @@ table 'Codici colore'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Column3
+		dataType: string
+		lineageTag: cbe6e5ca-a2fd-4c67-bffe-7f428afba0e4
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codice colore per BI'
+		dataType: string
+		lineageTag: 1834f160-d148-4a67-9152-f1804ccddc96
+		summarizeBy: none
+		sourceColumn: Codice colore per BI
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Codici colore' = m
 		mode: import
 		source =

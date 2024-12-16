@@ -57,3 +57,13 @@ relationship a79da20a-e265-8867-f50d-f0e77355ac55
 	fromColumn: 'Anagrafica articoli'.Colore
 	toColumn: 'Codici colore'.'Codice Colore'
 
+relationship 569ad2e5-60e1-49dc-aa73-e0e2e0d30ef6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Indice_versioni.'Data inizio modifiche'
+	toColumn: LocalDateTable_c09d6255-1ee2-4840-9d06-bb52ea5ef7c1.Date
+
+relationship 8ea8ab2a-ba5e-476f-8c84-3b34923b95f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Indice_versioni.'Data rilascio'
+	toColumn: LocalDateTable_7fa43507-739e-44b0-853e-051210971438.Date
+

@@ -243,6 +243,19 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3169,
+            "y": 388.25
+          },
+          "nodeIndex": "Indice_versioni",
+          "nodeLineageTag": "e954b684-ef8a-4c6f-b724-93e5b57e55bc",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Tutte le tabelle",
