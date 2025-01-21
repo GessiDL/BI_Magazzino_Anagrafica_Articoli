@@ -139,3 +139,17 @@ lia_sconto = Sconto
 lia_data_fin_vig = Data fine vigore
 lia_data_variaz = Data modifica
 lia_operatore = Operatore
+
+
+--------------------------------------------------Tabella Movimenti articolo (mmov)
+m_cod_for = codice_fornitore
+m_data_mov = Data movimento
+m_caus_mov = causale_movimento
+m_sig_art = Codice articolo
+m_dep = Deposito
+m_qta = Quantità
+
+--------------------------------------------------Tabella Causali movimento (Excel in dati da mcau)
+c_sigla = causale_movimento
+c_descr = Descrizione causale movimento
+Gruppo = Gruppo

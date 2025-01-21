@@ -1,0 +1,49 @@
+table 'Causali movimento (mcau)'
+	lineageTag: 73b32328-e8de-4261-b013-457f1059df1d
+
+	column causale_movimento
+		dataType: string
+		isHidden
+		lineageTag: 748bcbcb-ad0c-4d6d-abfd-9b632f4e7e03
+		summarizeBy: none
+		sourceColumn: causale_movimento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descrizione causale movimento'
+		dataType: string
+		lineageTag: 788a77ae-3b19-4166-ba5c-be9a4cdce327
+		summarizeBy: none
+		sourceColumn: Descrizione causale movimento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gruppo
+		dataType: string
+		lineageTag: c98899a6-3f50-4712-947d-c636f8022d5e
+		summarizeBy: none
+		sourceColumn: Gruppo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Causali movimento (mcau)' = m
+		mode: import
+		source =
+				let
+				    Origine = Excel.Workbook(File.Contents("C:\Users\gessica.dilenardo\Documents\Power BI\Dati\F12\mcau_causali_movimento.xlsx"), null, true),
+				    mcau_202501200928_Sheet = Origine{[Item="mcau_202501200928",Kind="Sheet"]}[Data],
+				    #"Intestazioni alzate di livello" = Table.PromoteHeaders(mcau_202501200928_Sheet, [PromoteAllScalars=true]),
+				    #"Modificato tipo" = Table.TransformColumnTypes(#"Intestazioni alzate di livello",{{"c_sigla", type any}, {"c_descr", type text}, {"c_mov_cont", type text}, {"c_tipo", type text}, {"c_agg_costi", type text}, {"c_tip_costo", type text}, {"c_agg_valtot", type text}, {"c_costo_prov", type text}, {"c_sigla_sec_cau", type text}, {"c_calc_ccm", type text}, {"c_calc_pro", type text}, {"c_data_fine_val", type date}, {"Gruppo", type text}}),
+				    #"Rinominate colonne" = Table.RenameColumns(#"Modificato tipo",{{"c_sigla", "causale_movimento"}, {"c_descr", "Descrizione causale movimento"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"causale_movimento", "Descrizione causale movimento", "Gruppo"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

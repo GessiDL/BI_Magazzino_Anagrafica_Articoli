@@ -7,32 +7,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-/// Errori nelle query caricate il 12/12/2024 13:33:03.
-queryGroup 'Errori di query - 12/12/2024 13:33:03'
-
-	annotation PBI_QueryGroupOrder = 0
-
-/// Errori nelle query caricate il 13/12/2024 09:08:22.
-queryGroup 'Errori di query - 13/12/2024 09:08:22'
-
-	annotation PBI_QueryGroupOrder = 1
-
-/// Errori nelle query caricate il 16/12/2024 14:01:56.
-queryGroup 'Errori di query - 16/12/2024 14:01:56'
-
-	annotation PBI_QueryGroupOrder = 2
-
-/// Errori nelle query caricate il 16/12/2024 14:03:53.
-queryGroup 'Errori di query - 16/12/2024 14:03:53'
-
-	annotation PBI_QueryGroupOrder = 3
-
-/// Errori nelle query caricate il 16/12/2024 14:06:04.
-queryGroup 'Errori di query - 16/12/2024 14:06:04'
-
-	annotation PBI_QueryGroupOrder = 4
-
-annotation PBI_QueryOrder = ["Anagrafica articoli","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini","Listini vendita (liav)","Errori in Listini vendita (liav)","Errori in Listini vendita (liav) (2)","Codici colore","Indice_versioni","Errori in Listini vendita (liav) (3)","Errori in Listini vendita (liav) (4)","Errori in Listini vendita (liav) (5)"]
+annotation PBI_QueryOrder = ["Anagrafica articoli (art)","Raggruppamento articoli (smag_smg_tipo=R)","Gruppo merceologico (smag_smg_tipo=G)","Classe Inventariale (smag_smg_tipo=C)","Tipo Articolo (tab_manuale)","MRP","Depositi (dep)","Stato Articolo","Qualifica Articolo","Tipologia Prodotto","Linea","Controllo Qualità","Vendite fatturate","Ordini clienti","Stato ordini","Listini vendita (liav)","Codici colore","Indice_versioni","Movimenti articoli (mmov)","Causali movimento (mcau)","Testata ordini acquisto (ofi)","Ordini acquisto","S/Conto"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -40,7 +15,7 @@ annotation PBIDesktopVersion = 2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table 'Anagrafica articoli'
+ref table 'Anagrafica articoli (art)'
 ref table DateTableTemplate_a03b613b-e75d-4cb2-925f-3aa8cc1a1ae3
 ref table LocalDateTable_0c574c3c-aa47-423e-9f7e-b26b8aba5e6c
 ref table LocalDateTable_c85e8b71-d317-44f5-bc0e-ec3c3896d528
@@ -69,6 +44,12 @@ ref table 'Codici colore'
 ref table Indice_versioni
 ref table LocalDateTable_c09d6255-1ee2-4840-9d06-bb52ea5ef7c1
 ref table LocalDateTable_7fa43507-739e-44b0-853e-051210971438
+ref table 'Movimenti articoli (mmov)'
+ref table 'Causali movimento (mcau)'
+ref table 'Testata ordini acquisto (ofi)'
+ref table LocalDateTable_cdc1920a-4dee-4952-a949-73784497c704
+ref table 'Ordini acquisto'
+ref table S/Conto
 
 ref cultureInfo it-IT
 

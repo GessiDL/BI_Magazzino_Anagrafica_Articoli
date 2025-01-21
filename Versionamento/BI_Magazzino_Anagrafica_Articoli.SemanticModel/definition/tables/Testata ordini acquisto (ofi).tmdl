@@ -1,0 +1,63 @@
+table 'Testata ordini acquisto (ofi)'
+	isHidden
+	lineageTag: 6b70bbcb-a127-4322-9fec-ef894a2019e9
+
+	column codice_fornitore
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6c9248fe-b66c-488f-8131-a7d6e40309c0
+		summarizeBy: sum
+		sourceColumn: codice_fornitore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data ordine'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 3b45def3-2559-4a76-aff7-d5809579b828
+		summarizeBy: none
+		sourceColumn: Data ordine
+
+		variation Variazione
+			isDefault
+			relationship: 848e634e-b184-414f-a6fc-6bc92cbbd6b6
+			defaultHierarchy: LocalDateTable_cdc1920a-4dee-4952-a949-73784497c704.'Gerarchia data'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column numero_ordine
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3bd9bf8e-518c-4094-a568-d9f64957429a
+		summarizeBy: none
+		sourceColumn: numero_ordine
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Testata ordini acquisto (ofi)' = m
+		mode: import
+		source =
+				let
+				    Origine = Odbc.Query("dsn=F12 Informix DB", "select*from ofi"),
+				    #"Rinominate colonne" = Table.RenameColumns(Origine,{{"oj_s_conto_for", "codice_fornitore"}, {"oj_data_ord", "Data ordine"}, {"oj_ann_num", "numero_ordine"}}),
+				    #"Rimosse altre colonne" = Table.SelectColumns(#"Rinominate colonne",{"codice_fornitore", "Data ordine", "numero_ordine"})
+				in
+				    #"Rimosse altre colonne"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigazione
+
+	annotation PBI_ResultType = Table
+

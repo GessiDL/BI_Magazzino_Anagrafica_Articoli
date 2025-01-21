@@ -4,23 +4,10 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 655,
+        "x": 623,
         "y": 0
       },
       "nodes": [
-        {
-          "location": {
-            "x": 1220,
-            "y": 156
-          },
-          "nodeIndex": "Anagrafica articoli",
-          "nodeLineageTag": "cd546146-3a9f-4f6a-8ba9-16761599f89c",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 15
-        },
         {
           "location": {
             "x": 1707,
@@ -32,7 +19,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 11
         },
         {
           "location": {
@@ -45,7 +32,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 12
         },
         {
           "location": {
@@ -58,7 +45,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 13
         },
         {
           "location": {
@@ -71,7 +58,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 14
         },
         {
           "location": {
@@ -84,7 +71,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 15
         },
         {
           "location": {
@@ -97,7 +84,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 9
+          "zIndex": 16
         },
         {
           "location": {
@@ -110,7 +97,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 17
         },
         {
           "location": {
@@ -123,7 +110,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 18
         },
         {
           "location": {
@@ -136,12 +123,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 12
+          "zIndex": 19
         },
         {
           "location": {
-            "x": 2727,
-            "y": 0
+            "x": 2483,
+            "y": 319
           },
           "nodeIndex": "Controllo Qualità",
           "nodeLineageTag": "d77d9a29-37c4-4772-bb82-2aa70a4f5960",
@@ -149,12 +136,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 20
         },
         {
           "location": {
-            "x": 2972,
-            "y": 0
+            "x": 2488,
+            "y": 471
           },
           "nodeIndex": "Linea",
           "nodeLineageTag": "0cbaf5dc-8654-49c4-858e-f6c91f7f1b10",
@@ -162,12 +149,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 14
+          "zIndex": 21
         },
         {
           "location": {
-            "x": 1402,
-            "y": 493.5
+            "x": 593,
+            "y": 448.5
           },
           "nodeIndex": "Vendite fatturate",
           "nodeLineageTag": "72d577a6-604e-4dce-a70f-83f656ebc5c0",
@@ -175,21 +162,22 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 16,
+          "zIndex": 22,
           "expandedHeight": 300
         },
         {
           "location": {
-            "x": 923,
-            "y": 463.5
+            "x": 899,
+            "y": 468.5
           },
           "nodeIndex": "Ordini clienti",
           "nodeLineageTag": "5198beef-c834-4fa0-b99c-32f3d353413d",
           "size": {
-            "height": 489,
+            "height": 176,
             "width": 234
           },
-          "zIndex": 17
+          "zIndex": 23,
+          "expandedHeight": 489
         },
         {
           "location": {
@@ -202,12 +190,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 10
         },
         {
           "location": {
-            "x": 1524,
-            "y": 187.75
+            "x": 1510,
+            "y": 155.75
           },
           "nodeIndex": "Listini vendita (liav)",
           "nodeLineageTag": "4d390e82-a0ae-4ef6-9c64-3d00393a35ea",
@@ -215,21 +203,22 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 1,
+          "zIndex": 8,
           "expandedHeight": 248
         },
         {
           "location": {
-            "x": 1229,
-            "y": 720.75
+            "x": 1246,
+            "y": 367.75
           },
           "nodeIndex": "Calendar",
           "nodeLineageTag": "de0b6b1b-06b4-4b8a-8d44-b8d117bac037",
           "size": {
-            "height": 200,
+            "height": 104,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 9,
+          "expandedHeight": 200
         },
         {
           "location": {
@@ -239,15 +228,16 @@
           "nodeIndex": "Codici colore",
           "nodeLineageTag": "cdbcf8e2-ebe5-411e-a625-0a143a682e81",
           "size": {
-            "height": 128,
+            "height": 104,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1,
+          "expandedHeight": 128
         },
         {
           "location": {
-            "x": 3169,
-            "y": 388.25
+            "x": 0,
+            "y": 357.25
           },
           "nodeIndex": "Indice_versioni",
           "nodeLineageTag": "e954b684-ef8a-4c6f-b724-93e5b57e55bc",
@@ -255,7 +245,87 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1259,
+            "y": 626.25
+          },
+          "nodeIndex": "Movimenti articoli (mmov)",
+          "nodeLineageTag": "47e71906-a17d-447a-ab52-676498a7db1c",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1567,
+            "y": 668.25
+          },
+          "nodeIndex": "Causali movimento (mcau)",
+          "nodeLineageTag": "73b32328-e8de-4261-b013-457f1059df1d",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1062,
+            "y": 164
+          },
+          "nodeIndex": "Anagrafica articoli (art)",
+          "nodeLineageTag": "cd546146-3a9f-4f6a-8ba9-16761599f89c",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 5,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 888,
+            "y": 949.375
+          },
+          "nodeIndex": "Testata ordini acquisto (ofi)",
+          "nodeLineageTag": "6b70bbcb-a127-4322-9fec-ef894a2019e9",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 896,
+            "y": 735.375
+          },
+          "nodeIndex": "Ordini acquisto",
+          "nodeLineageTag": "78d29009-61b6-444c-8af0-b85d518a4902",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 24,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 515,
+            "y": 697.6875
+          },
+          "nodeIndex": "S/Conto",
+          "nodeLineageTag": "d2884aef-aa97-4cb9-b575-4aa7ab16ee2a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
         }
       ],
       "name": "Tutte le tabelle",

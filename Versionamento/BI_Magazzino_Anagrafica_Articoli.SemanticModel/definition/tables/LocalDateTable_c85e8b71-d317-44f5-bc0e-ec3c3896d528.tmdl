@@ -105,7 +105,7 @@ table LocalDateTable_c85e8b71-d317-44f5-bc0e-ec3c3896d528
 
 	partition LocalDateTable_c85e8b71-d317-44f5-bc0e-ec3c3896d528 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('Anagrafica articoli'[Data ultimo acquisto])), 1, 1), Date(Year(MAX('Anagrafica articoli'[Data ultimo acquisto])), 12, 31))
+		source = Calendar(Date(Year(MIN('Anagrafica articoli (art)'[Data ultimo acquisto])), 1, 1), Date(Year(MAX('Anagrafica articoli (art)'[Data ultimo acquisto])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

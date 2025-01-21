@@ -1,9 +1,5 @@
-table 'Anagrafica articoli'
+table 'Anagrafica articoli (art)'
 	lineageTag: cd546146-3a9f-4f6a-8ba9-16761599f89c
-
-	measure prova = SUM('Anagrafica articoli'[Categoria])
-		formatString: 0
-		lineageTag: 38cd617b-f09b-40a6-abf3-e5840c2721f1
 
 	column 'Data Inserimento'
 		dataType: dateTime
@@ -233,23 +229,25 @@ table 'Anagrafica articoli'
 
 	column 'Lotto Riordino'
 		dataType: double
+		formatString: 0
 		lineageTag: d775a33d-7438-43de-9086-72c747763e18
 		summarizeBy: none
 		sourceColumn: Lotto Riordino
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column 'Scorta minima'
 		dataType: double
+		formatString: 0
 		lineageTag: b06ef76b-720d-4390-a066-8d71cb682835
 		summarizeBy: none
 		sourceColumn: Scorta minima
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column qualifica*
 		dataType: string
@@ -346,7 +344,7 @@ table 'Anagrafica articoli'
 
 	column 'Codice Fornitore' =
 			
-			VAR NumeroOrigine = 'Anagrafica articoli'[codice_fornitore+]
+			VAR NumeroOrigine = 'Anagrafica articoli (art)'[codice_fornitore+]
 			VAR Mastro = QUOTIENT(NumeroOrigine,10000000)
 			VAR x = NumeroOrigine - (Mastro*10000000)
 			VAR Conto = QUOTIENT(x,10000)
@@ -357,49 +355,49 @@ table 'Anagrafica articoli'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Riordino = IF('Anagrafica articoli'[fabbisogno/scorta+]="F","Fabbisogno","Scorta Minima")
+	column Riordino = IF('Anagrafica articoli (art)'[fabbisogno/scorta+]="F","Fabbisogno","Scorta Minima")
 		lineageTag: 6c21d29b-02f5-4505-a2b3-00eeedbc1acf
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Lista di Prelelievo' = IF('Anagrafica articoli'[lista_prelievo+]="S", "Si", "No")
+	column 'Lista di Prelelievo' = IF('Anagrafica articoli (art)'[lista_prelievo+]="S", "Si", "No")
 		lineageTag: 59a09cff-08bc-40c1-9048-2e9d6b92153f
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Raggruppamento Spedizione' = IF('Anagrafica articoli'[raggruppamento_spedizione+]="S", "Si", "No")
+	column 'Raggruppamento Spedizione' = IF('Anagrafica articoli (art)'[raggruppamento_spedizione+]="S", "Si", "No")
 		lineageTag: 4fb1c348-832b-4212-b135-c2f4f2cbcfa6
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Movimentato a magazzino' = if('Anagrafica articoli'[movimentazione_magazzino+]="S", "Si", "No")
+	column 'Movimentato a magazzino' = if('Anagrafica articoli (art)'[movimentazione_magazzino+]="S", "Si", "No")
 		lineageTag: ea0da34f-970d-4cf4-ab79-ad712cb60822
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column Categoria = if('Anagrafica articoli'[categoria+]="A","Acquisto", IF('Anagrafica articoli'[categoria+]="P","Produzione","Fittizio"))
+	column Categoria = if('Anagrafica articoli (art)'[categoria+]="A","Acquisto", IF('Anagrafica articoli (art)'[categoria+]="P","Produzione","Fittizio"))
 		lineageTag: f48dd39e-1c02-4ce7-b18c-3890c0016b89
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column Commercializzato = IF('Anagrafica articoli'[commercializzato+]="S","Si","No")
+	column Commercializzato = IF('Anagrafica articoli (art)'[commercializzato+]="S","Si","No")
 		lineageTag: 16d7e46c-7c22-407d-abe0-c614dcfeee30
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Dipendente da altro modello' = IF(RIGHT('Anagrafica articoli'[articolo_riferimento+],1)="*","Si","No")
+	column 'Dipendente da altro modello' = IF(RIGHT('Anagrafica articoli (art)'[articolo_riferimento+],1)="*","Si","No")
 		lineageTag: 8ff374ac-dad6-40a2-a422-8e643590c34f
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Controlli in accettazione' = IF('Anagrafica articoli'[controllo_accettazione+]="S", "Si", "No")
+	column 'Controlli in accettazione' = IF('Anagrafica articoli (art)'[controllo_accettazione+]="S", "Si", "No")
 		lineageTag: d30f76df-1ce3-4776-b526-4aac173fabe3
 		summarizeBy: none
 
@@ -431,9 +429,9 @@ table 'Anagrafica articoli'
 
 	column 'Unita misura Gestionale/Acquisti' = ```
 			
-			IF( NOT(ISBLANK ('Anagrafica articoli'[Unità Misura Acquisti])) && 
-			    NOT(ISBLANK('Anagrafica articoli'[Unità Misura Gestionale])) && 
-			    'Anagrafica articoli'[Unità Misura Gestionale]='Anagrafica articoli'[Unità Misura Acquisti],
+			IF( NOT(ISBLANK ('Anagrafica articoli (art)'[Unità Misura Acquisti])) && 
+			    NOT(ISBLANK('Anagrafica articoli (art)'[Unità Misura Gestionale])) && 
+			    'Anagrafica articoli (art)'[Unità Misura Gestionale]='Anagrafica articoli (art)'[Unità Misura Acquisti],
 			    "Uguali",
 			    "Diverse"
 			    )
@@ -536,13 +534,13 @@ table 'Anagrafica articoli'
 
 		annotation SummarizationSetBy = User
 
-	column Colore = RIGHT('Anagrafica articoli'[Codice Articolo],1)
+	column Colore = RIGHT('Anagrafica articoli (art)'[Codice Articolo],1)
 		lineageTag: 95c34948-3ae1-42b1-9355-f606e7093f47
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Anagrafica articoli' = m
+	partition 'Anagrafica articoli (art)' = m
 		mode: import
 		source =
 				let
@@ -578,6 +576,8 @@ table 'Anagrafica articoli'
 				    #"Visualizzazione Controllo Qualità" = Table.ExpandTableColumn(#"Merge di query Controllo Qualità", "Controllo Qualità", {"Tipo controllo qualità"}, {"Tipo controllo qualità"})
 				in
 				    #"Visualizzazione Controllo Qualità"
+
+	changedProperty = Name
 
 	annotation PBI_NavigationStepName = Navigazione
 

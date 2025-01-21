@@ -1,11 +1,11 @@
 relationship 241b35aa-4c8d-4216-aa1d-856f972af22a
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Anagrafica articoli'.'Data Inserimento'
+	fromColumn: 'Anagrafica articoli (art)'.'Data Inserimento'
 	toColumn: LocalDateTable_0c574c3c-aa47-423e-9f7e-b26b8aba5e6c.Date
 
 relationship b504f4cd-a196-4fe8-a5ea-77cd2f76ca8f
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Anagrafica articoli'.'Data ultimo acquisto'
+	fromColumn: 'Anagrafica articoli (art)'.'Data ultimo acquisto'
 	toColumn: LocalDateTable_c85e8b71-d317-44f5-bc0e-ec3c3896d528.Date
 
 relationship 95ac7a7b-54d2-4402-a486-eb19c8bdc501
@@ -20,7 +20,7 @@ relationship c53fcae9-df16-4510-958f-a07a3aa8f198
 
 relationship ecd1a56b-c614-27a2-ac96-9e069795fcdf
 	fromColumn: 'Vendite fatturate'.'Codice articolo'
-	toColumn: 'Anagrafica articoli'.'Codice Articolo'
+	toColumn: 'Anagrafica articoli (art)'.'Codice Articolo'
 
 relationship a11e2c7c-eb5d-461a-8a10-3ff48be8757c
 	joinOnDateBehavior: datePartOnly
@@ -39,11 +39,11 @@ relationship ebc14423-3b78-4ee9-97eb-ea892251a3fa
 
 relationship AutoDetected_57300ba9-f46e-4476-9c0b-49cd3dcaf8ae
 	fromColumn: 'Listini vendita (liav)'.'Codice Articolo'
-	toColumn: 'Anagrafica articoli'.'Codice Articolo'
+	toColumn: 'Anagrafica articoli (art)'.'Codice Articolo'
 
 relationship 46ded4cf-4076-4ee4-13f9-6db46aeea713
 	fromColumn: 'Ordini clienti'.'Codice articolo'
-	toColumn: 'Anagrafica articoli'.'Codice Articolo'
+	toColumn: 'Anagrafica articoli (art)'.'Codice Articolo'
 
 relationship d1605d70-4f0f-0d3a-2462-8310973b347b
 	fromColumn: 'Vendite fatturate'.'Data fattura'
@@ -54,7 +54,7 @@ relationship da05cec5-c765-f629-1990-76ec44dc0fae
 	toColumn: Calendar.Data
 
 relationship a79da20a-e265-8867-f50d-f0e77355ac55
-	fromColumn: 'Anagrafica articoli'.Colore
+	fromColumn: 'Anagrafica articoli (art)'.Colore
 	toColumn: 'Codici colore'.'Codice Colore'
 
 relationship 569ad2e5-60e1-49dc-aa73-e0e2e0d30ef6
@@ -66,4 +66,41 @@ relationship 8ea8ab2a-ba5e-476f-8c84-3b34923b95f8
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Indice_versioni.'Data rilascio'
 	toColumn: LocalDateTable_7fa43507-739e-44b0-853e-051210971438.Date
+
+relationship AutoDetected_c300ce64-d811-4e2a-a138-37b89508ec57
+	fromColumn: 'Movimenti articoli (mmov)'.'Codice articolo'
+	toColumn: 'Anagrafica articoli (art)'.'Codice Articolo'
+
+relationship AutoDetected_22125a4f-3dbb-49d1-916d-77b7162be8f0
+	fromColumn: 'Movimenti articoli (mmov)'.causale_movimento
+	toColumn: 'Causali movimento (mcau)'.causale_movimento
+
+relationship ccb7e4a9-e921-af7c-28c8-a3548a5a6dc2
+	fromColumn: 'Movimenti articoli (mmov)'.'Data movimento'
+	toColumn: Calendar.Data
+
+relationship 848e634e-b184-414f-a6fc-6bc92cbbd6b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Testata ordini acquisto (ofi)'.'Data ordine'
+	toColumn: LocalDateTable_cdc1920a-4dee-4952-a949-73784497c704.Date
+
+relationship AutoDetected_0cb68c56-a2d6-40b6-9240-ceda2389a233
+	fromColumn: 'Ordini acquisto'.numero_ordine
+	toColumn: 'Testata ordini acquisto (ofi)'.numero_ordine
+
+relationship ab5badbb-8bf5-77f9-6ce6-ff3eb249d98e
+	fromColumn: 'Ordini acquisto'.'Codice articolo'
+	toColumn: 'Anagrafica articoli (art)'.'Codice Articolo'
+
+relationship 2b6a64a2-9cb5-59bc-6f02-b372f7461d88
+	fromColumn: 'Ordini acquisto'.codice_fornitore
+	toColumn: S/Conto.codice_s_conto
+
+relationship b2ddb4b9-3bba-1047-5fb9-9e10b43fdeaf
+	fromColumn: 'Ordini clienti'.codice_cliente+
+	toColumn: S/Conto.codice_s_conto
+
+relationship 1af5e363-807f-bab2-cfe9-dcf2114a33a3
+	fromColumn: 'Ordini acquisto'.'Data ordine'
+	toColumn: Calendar.Data
 
